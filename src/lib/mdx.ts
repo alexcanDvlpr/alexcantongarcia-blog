@@ -16,7 +16,6 @@ export const getPostBySlug = (slug: string) => {
       );
   
       const { content } = matter(mdxSource)
-  
       return content;
 }
 
