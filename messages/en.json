@@ -1,10 +1,10 @@
 {
-    "HomePage": {
-      "title": "Hello world!"
-    },
-    "es": "Spanish",
-    "en": "English",
-    "BlogPage": {
-      "title": "Blog Page"
-    }
+	"HomePage": {
+		"title": "Hello world!"
+	},
+	"es": "Spanish",
+	"en": "English",
+	"BlogPage": {
+		"title": "Blog Page"
+	}
 }
