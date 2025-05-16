@@ -3,6 +3,7 @@ import path from "path";
 import { Metadata } from "next";
 import Post from "@/app/components/Post";
 import { getFileMetadataBySlug, getPostBySlug } from "@/lib/mdx";
+import { locales } from "@/i18n/request";
 
 interface Props {
     params: Promise<{ slug: string }>
@@ -12,15 +13,20 @@ export default async function Page({
     params,
   }: Props) {
     const { slug } = await params;
-    const post = getPostBySlug(slug);
+    const post = await getPostBySlug(slug);
     return (
         <Post source={post} />
       )
   }
 
   export function generateStaticParams() {
-    const postsDir = path.join(process.cwd(), 'src/markdown/posts')
-    const files = fs.readdirSync(postsDir);
+    const filesByLocale = locales.map(locale => {
+      const postsDir = path.join(process.cwd(), "src/markdown/posts", locale);
+      return fs.readdirSync(postsDir);
+    });
+
+    const files = [...(filesByLocale.flat())];
+    
     return files.map((file) => ({
       slug: file.split(".")[0]
     }));
@@ -31,7 +37,7 @@ export default async function Page({
   ): Promise<Metadata> {
     const { slug } = await params
    
-    const metadata = getFileMetadataBySlug(slug);
+    const metadata = await getFileMetadataBySlug(slug);
    
     return {
       title: metadata.title,

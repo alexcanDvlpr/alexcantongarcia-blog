@@ -3,5 +3,8 @@
       "title": "Hola Mundo!"
     },
     "es": "Español",
-    "en": "Inglés"
+    "en": "Inglés",
+    "BlogPage": {
+      "title": "Página de Blog"
+    }
 }

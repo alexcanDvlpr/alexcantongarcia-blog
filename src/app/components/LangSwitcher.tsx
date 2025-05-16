@@ -3,10 +3,13 @@ import { Locale } from "@/i18n/request";
 import { setUserLocale } from "@/lib/locale";
 import {startTransition} from 'react';
 import { useLocale, useTranslations } from "next-intl";
+import { redirect, usePathname } from "next/navigation";
+import { sleep } from "@/shared";
 
 const LangSwitcher = () => {
     const t = useTranslations();
     const locale = useLocale();
+    const pathname = usePathname()
 
     const items = [
         {
@@ -21,11 +24,13 @@ const LangSwitcher = () => {
 
     function onChange(value: string) {
         const locale = value as Locale;
-        console.log({
-            locale
-        })
-        startTransition(() => {
-          setUserLocale(locale);
+
+        startTransition(async () => {
+            setUserLocale(locale);
+            if (pathname.includes("/blog/") && pathname.split("blog/").length > 1) {
+                await sleep(250);
+                redirect("/blog");
+            }
         });
       }
 
