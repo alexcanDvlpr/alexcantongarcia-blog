@@ -1,4 +1,10 @@
 {
+	"NavbarItems": {
+		"home": "Home",
+		"about": "About",
+		"blog": "Blog",
+		"greetings": "Hello"
+	},
 	"HomePage": {
 		"title": "Hello world!"
 	},

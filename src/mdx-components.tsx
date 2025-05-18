@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { MDXComponents } from "mdx/types";
-import { ReactNode } from "react";
-import CodeBlock from "./app/components/CodeBlock";
-import MyComponent from "./app/components/MyComponent";
-import { Heading } from "./app/components/blog/Heading";
+import type { ReactNode } from "react";
+import CodeBlock from "./components/CodeBlock";
+import MyComponent from "./components/MyComponent";
+import { Heading } from "./components/blog/Heading";
 
 export const MDXOwnComponents = {
 	h1: ({ children }: { children: ReactNode }) => (
