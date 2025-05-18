@@ -28,7 +28,7 @@ export default async function RootLayout({
 	return (
 		<html lang={locale}>
 			<body
-				className={`${instrument_Sans.variable} antialiased bg-[#011627] text-gray-200`}
+				className={`${instrument_Sans.variable} antialiased bg-[#011627] text-gray-200 relative w-full`}
 			>
 				<NextIntlClientProvider>
 					<Navbar />

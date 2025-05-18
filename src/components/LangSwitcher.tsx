@@ -12,7 +12,7 @@ type LanguageType = {
 	flag: string;
 };
 
-const LangSwitcher = () => {
+const LangSwitcher = ({ isMobile }: { isMobile?: boolean }) => {
 	const t = useTranslations();
 	const locale = useLocale();
 	const pathname = usePathname();
@@ -47,7 +47,6 @@ const LangSwitcher = () => {
 		});
 	}
 
-	// Close dropdown when clicking outside
 	useEffect(() => {
 		function handleClickOutside(event: MouseEvent) {
 			if (
@@ -64,6 +63,8 @@ const LangSwitcher = () => {
 		};
 	}, []);
 
+	const classByDeviceType = isMobile ? "-right-45" : "-right-4";
+
 	return (
 		<div className="relative" ref={dropdownRef}>
 			{/* Dropdown trigger button */}
@@ -79,7 +80,9 @@ const LangSwitcher = () => {
 
 			{/* Dropdown menu */}
 			{isOpen && (
-				<div className="absolute -right-4 mt-2 w-52 bg-[#011627] rounded-md shadow-lg py-1 border border-gray-200">
+				<div
+					className={`absolute ${classByDeviceType} mt-2 w-52 bg-[#011627] rounded-md shadow-lg py-1 border border-gray-200`}
+				>
 					{items.map((item) => (
 						// biome-ignore lint/a11y/useButtonType: <explanation>
 						<button

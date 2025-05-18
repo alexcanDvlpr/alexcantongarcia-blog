@@ -12,5 +12,5 @@ export const getNavbarItems = (
 	{ label: t("home"), link: "/", isExternal: false },
 	{ label: t("about"), link: "/about", isExternal: false },
 	{ label: t("blog"), link: "/blog", isExternal: false },
-	{ label: t("greetings"), link: "/", isExternal: false },
+	{ label: t("greetings"), link: "/12312", isExternal: false },
 ];
