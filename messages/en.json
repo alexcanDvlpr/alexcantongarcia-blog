@@ -11,6 +11,13 @@
 			"subtitle": "I`m web developer using JavaScript, TypeScript, Python and Go",
 			"showMore": "Show more"
 		},
+		"AboutSection": {
+			"title": "About me",
+  			"text": "I'm Alex and I live in Madrid, Spain 🇪🇸. I work as a web developer at a startup, using TypeScript, Next.js, Auth0, MongoDB, and Python.",
+			"text1": "I love building useful products and continuously learning, especially about architecture and application scaling.",
+			"text2": "When I'm not coding, I enjoy board games 🎲, airsoft 🔫, basketball 🏀, and craft beer 🍺.",
+			"showMore": "Show more"
+		},
 		"title": "Hello World!"
 	},
 	"es": "Spanish",

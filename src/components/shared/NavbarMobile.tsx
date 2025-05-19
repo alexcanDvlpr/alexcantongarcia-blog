@@ -46,7 +46,7 @@ const MobileNavbar = () => {
 	return (
 		<div className="fixed inset-x-0 top-0 lg:hidden z-50 flex justify-center items-center">
 			<nav className="w-[90%] flex justify-between items-center pt-4">
-				<div className="bg-[#011627]/40 text-[#00c896] w-full h-16 flex flex-row items-center justify-between rounded-xl border border-transparent animated-border pulse-shadow px-4">
+				<div className="bg-[#011627]/70 text-[#00c896] w-full h-16 flex flex-row items-center justify-between rounded-xl border border-transparent animated-border pulse-shadow px-4">
 					<Link href="/" className="flex items-center gap-2">
 						<Image
 							src={Logo || "/placeholder.svg"}
