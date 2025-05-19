@@ -11,6 +11,13 @@
 			"subtitle": "Soy desarrollador web en JavaScript, TypeScript, Python y Go",
 			"showMore": "Descubre más"
 		},
+		"AboutSection": {
+			"title": "Sobre mí",
+			"text": "Soy Alex y vivo en Madrid, España 🇪🇸. Trabajo como desarrollador web en una startup, usando TypeScript, Next.js, Auth0, MongoDB y Python.",
+			"text1": "Me encanta construir productos útiles y seguir aprendiendo, especialmente sobre arquitectura y el escalado de aplicaciones.",
+			"text2": "Cuando no estoy programando, lo que me gusta son los juegos de mesa 🎲, el airsoft 🔫, el baloncesto 🏀 y la cerveza artesanal 🍺.",
+			"showMore": "Descubre más"
+		},
 		"title": "Hola Mundo!"
 	},
 	"es": "Español",

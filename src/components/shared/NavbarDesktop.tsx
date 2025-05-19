@@ -14,7 +14,7 @@ const NavbarDesktop = () => {
 
 	return (
 		<div className="w-full flex flex-row justify-center items-center pt-6 fixed top-0 left-0 right-0 z-50">
-			<div className="bg-[#011627]/40 text-[#00c896] w-3/4 xl:w-1/2 h-16 flex flex-row items-center justify-between rounded-xl backdrop-blur-md border border-transparent animated-border pulse-shadow px-4">
+			<div className="bg-[#011627]/70 text-[#00c896] w-3/4 xl:w-1/2 h-16 flex flex-row items-center justify-between rounded-xl backdrop-blur-md border border-transparent animated-border pulse-shadow px-4">
 				<Link href="/" className="flex items-center gap-2">
 					<Image
 						src={Logo}
