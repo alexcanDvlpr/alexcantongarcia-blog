@@ -5,6 +5,11 @@
 	--color-secondary: "#00c896";
 } */
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 @layer components {
 	.pulse-shadow {
 		animation: pulse-shadow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -20,4 +25,30 @@
 			box-shadow: 0 0 20px rgba(0, 200, 150, 0.6);
 		}
 	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		border-color: transparent;
+	}
+	50% {
+		border-color: white;
+	}
+}
+
+.animate-typing {
+	animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 2px solid white;
 }

@@ -7,7 +7,7 @@ const Navbar = () => {
 	const isMobileView = useIsMobile();
 	const element = isMobileView ? <MobileNavbar /> : <NavbarDesktop />;
 
-	return <div className="w-full h-auto relative">{element}</div>;
+	return element;
 };
 
 export default Navbar;

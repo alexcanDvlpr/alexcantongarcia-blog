@@ -27,12 +27,10 @@ export default async function RootLayout({
 	const locale = await getLocale();
 	return (
 		<html lang={locale}>
-			<body
-				className={`${instrument_Sans.variable} antialiased bg-[#011627] text-gray-200 relative w-full`}
-			>
+			<body>
 				<NextIntlClientProvider>
 					<Navbar />
-					<main>{children}</main>
+					{children}
 				</NextIntlClientProvider>
 			</body>
 		</html>

@@ -6,7 +6,12 @@
 		"greetings": "Hello"
 	},
 	"HomePage": {
-		"title": "Hello world!"
+		"HeroSection": {
+			"title": "Hi, I`m Alex!",
+			"subtitle": "I`m web developer using JavaScript, TypeScript, Python and Go",
+			"showMore": "Show more"
+		},
+		"title": "Hello World!"
 	},
 	"es": "Spanish",
 	"en": "English",

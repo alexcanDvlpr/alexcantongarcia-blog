@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import LangSwitcher from "../LangSwitcher";
+import LangSwitcher from "./LangSwitcher";
 import { getNavbarItems } from "@/shared/metadata/navbar-items";
 import type { NavbarItemType } from "@/shared/metadata/navbar-items";
 import Image from "next/image";

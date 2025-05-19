@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getNavbarItems } from "@/shared/metadata/navbar-items";
-import LangSwitcher from "../LangSwitcher";
+import LangSwitcher from "./LangSwitcher";
 import { useTranslations } from "next-intl";
 import Logo from "../../../public/images/logos/alexcan_dvlpr.webp";
 
@@ -44,9 +44,9 @@ const MobileNavbar = () => {
 	}, [isOpen]);
 
 	return (
-		<div className="w-full flex flex-row justify-center items-center lg:hidden fixed">
-			<nav className="w-full flex flex-row justify-center items-center pt-4">
-				<div className="bg-[#011627]/40 text-[#00c896] w-[90%] h-16 flex flex-row items-center justify-between rounded-xl border border-transparent animated-border pulse-shadow px-4">
+		<div className="fixed inset-x-0 top-0 lg:hidden z-50 flex justify-center items-center">
+			<nav className="w-[90%] flex justify-between items-center pt-4">
+				<div className="bg-[#011627]/40 text-[#00c896] w-full h-16 flex flex-row items-center justify-between rounded-xl border border-transparent animated-border pulse-shadow px-4">
 					<Link href="/" className="flex items-center gap-2">
 						<Image
 							src={Logo || "/placeholder.svg"}
@@ -65,7 +65,7 @@ const MobileNavbar = () => {
 					>
 						<Menu size={24} />
 					</button>
-					{isOpen && (
+					{isOpen ? (
 						<div
 							className="w-full h-screen fixed inset-0 top-0 bottom-0 bg-black/50 backdrop-blur-sm z-50"
 							onClick={() => setIsOpen(false)}
@@ -74,7 +74,7 @@ const MobileNavbar = () => {
 								className="absolute right-0 top-0 h-full w-[75%] bg-[#011627]/95 border-l border-[#00c896]/30 p-6"
 								onClick={(e) => e.stopPropagation()}
 							>
-								<div className="flex justify-end mb-8">
+								<div className="flex justify-end mb-8 pr-5">
 									<button
 										type="button"
 										onClick={() => setIsOpen(false)}
@@ -105,7 +105,7 @@ const MobileNavbar = () => {
 								</div>
 							</div>
 						</div>
-					)}
+					) : null}
 				</div>
 			</nav>
 		</div>

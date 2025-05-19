@@ -1,21 +1,11 @@
-import { getUserLocale } from "@/lib/locale";
-import { getTranslations } from "next-intl/server";
-import Link from "next/link";
+import AboutSection from "@/components/sections/AboutSection";
+import HeroSection from "@/components/sections/HeroSection";
 
-export default async function Home() {
-	const t = await getTranslations("HomePage");
-	const locale = await getUserLocale();
+const Home = () => (
+	<>
+		<HeroSection />
+		<AboutSection />
+	</>
+);
 
-	return (
-		<div className="w-full min-h-screen flex flex-col justify-center items-center gap-3">
-			<h1 className="text-4xl">{t("title")}</h1>
-			<h1 className="text-6xl">{locale === "es" ? "🇪🇸" : "🇺🇸"}</h1>
-			<Link className="text-7xl" href="/blog">
-				Blog
-			</Link>
-			<div className="w-28 h-28 bg-secondary">
-				<p className="text-red-600">Hola Mundo</p>
-			</div>
-		</div>
-	);
-}
+export default Home;
