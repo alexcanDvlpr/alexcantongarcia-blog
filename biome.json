@@ -25,6 +25,9 @@
 			"suspicious": {
 				"noExplicitAny": "off"
 			},
+			"a11y": {
+				"useKeyWithClickEvents": "off"
+			},
 			"complexity": {
 				"noForEach": "off",
 				"noStaticOnlyClass": "off"

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { Metadata } from "next";
-import Post from "@/app/components/Post";
+import Post from "@/components/shared/Post";
 import { getFileMetadataBySlug, getPostBySlug } from "@/lib/mdx";
 import { locales } from "@/i18n/request";
 
