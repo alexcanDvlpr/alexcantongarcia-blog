@@ -57,7 +57,7 @@ const SkillsSection = async () => {
 const SkillGroup = ({ title, skills }: { title: string; skills: Skills }) => (
     <div>
         <Heading className="pb-2" level={4}>{title}</Heading>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6">
             {skills.map(skill => <SkillItem key={skill.id} skill={skill} />)}
         </div>
     </div>
