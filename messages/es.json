@@ -18,7 +18,14 @@
 			"text2": "Cuando no estoy programando, lo que me gusta son los juegos de mesa 🎲, el airsoft 🔫, el baloncesto 🏀 y la cerveza artesanal 🍺.",
 			"showMore": "Descubre más"
 		},
-		"title": "Hola Mundo!"
+		"SkillsSection": {
+			"title": "Habilidades",
+			"languages": "Lenguajes",
+			"databases": "Bases de datos",
+			"tools": "Herramientas",
+			"getting-started": "Iniciando",
+			"years": "años"
+		}
 	},
 	"es": "Español",
 	"en": "Inglés",

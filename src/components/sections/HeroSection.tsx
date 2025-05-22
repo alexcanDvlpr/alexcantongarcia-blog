@@ -9,7 +9,7 @@ const HeroSection = async () => {
 			<div className="absolute inset-0 bg-black/60" />
 			<div className="w-full flex flex-col justify-center items-center z-10 gap-12 text-center">
 				<div className="flex flex-col gap-4">
-					<h1 className="text-4xl lg:text-7xl uppercase font-semibold text-white">
+					<h1 className="text-4xl lg:text-7xl uppercase font-semibold text-gray-200">
 						{t("HeroSection.title")}
 					</h1>
 

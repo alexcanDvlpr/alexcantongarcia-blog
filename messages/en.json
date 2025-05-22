@@ -18,7 +18,14 @@
 			"text2": "When I'm not coding, I enjoy board games 🎲, airsoft 🔫, basketball 🏀, and craft beer 🍺.",
 			"showMore": "Show more"
 		},
-		"title": "Hello World!"
+		"SkillsSection": {
+			"title": "Skills",
+			"languages": "Programming Languages",
+			"databases": "Databases",
+			"tools": "Tools",
+			"getting-started": "Getting started",
+			"years": "years"
+		}
 	},
 	"es": "Spanish",
 	"en": "English",
