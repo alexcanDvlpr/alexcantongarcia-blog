@@ -8,7 +8,15 @@ const nextConfig = {
 		remotePatterns: [
 			{ hostname: "plus.unsplash.com" }
 		]
-	}
+	},
+	async rewrites() {
+		return [
+		{
+			source: '/about-me',
+			destination: '/quien-soy',
+		},
+		];
+	},
 };
 
 const withNextIntl = createNextIntlPlugin();

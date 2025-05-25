@@ -9,8 +9,8 @@ export type NavbarItemType = {
 export const getNavbarItems = (
 	t: ReturnType<typeof createTranslator<Messages, any>>,
 ): Array<NavbarItemType> => [
-	{ label: t("home"), link: "/", isExternal: false },
-	{ label: t("about"), link: "/about", isExternal: false },
-	{ label: t("blog"), link: "/blog", isExternal: false },
-	{ label: t("greetings"), link: "/12312", isExternal: false },
+	{ label: t("home"), link: t("routes.home"), isExternal: false },
+	{ label: t("about"), link: t("routes.about"), isExternal: false },
+	{ label: t("blog"), link: t("routes.blog"), isExternal: false },
+	{ label: t("greetings"), link: t("routes.greetings"), isExternal: false },
 ];
