@@ -9,7 +9,11 @@ const AboutMePage = async () => {
     const t = await getTranslations("AboutPage");
 
     return (
-        <div className="w-full min-h-screen py-24 lg:py-30 flex flex-col justify-start items-center bg-gray-900 text-white">
+        <div className="w-full min-h-screen py-24 lg:py-30 flex flex-col justify-start items-center bg-gray-900 text-white relative">
+            {/* Grid Background */}
+            <div className="absolute inset-0 opacity-65">
+                <div className="h-full w-full bg-grid-pattern bg-[length:40px_40px]"></div>
+            </div>
             <AboutHeroSection />
             <div className="max-w-4xl mx-4 lg:mx-0 mt-8 lg:mt-8">
                 <Heading level={2}>{t("title")}</Heading>
@@ -39,13 +43,5 @@ const AboutMePage = async () => {
         </div>
     )
 }
-
-/*
-
-{t.rich("text2", {
-        strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-      })}
-
-*/
 
 export default AboutMePage;
