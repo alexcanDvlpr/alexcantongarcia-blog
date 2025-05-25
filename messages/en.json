@@ -3,7 +3,13 @@
 		"home": "Home",
 		"about": "About",
 		"blog": "Blog",
-		"greetings": "Hello"
+		"greetings": "Hello",
+		"routes": {
+			"home": "/",
+			"about": "/about-me",
+			"blog": "/blog",
+			"greetings": "/asas"
+		}
 	},
 	"HomePage": {
 		"HeroSection": {
@@ -13,7 +19,7 @@
 		},
 		"AboutSection": {
 			"title": "About me",
-  			"text": "I'm Alex and I live in Madrid, Spain 🇪🇸. I work as a web developer at a startup, using TypeScript, Next.js, Auth0, MongoDB, and Python.",
+			"text": "I'm Alex and I live in Madrid, Spain 🇪🇸. I work as a web developer at a startup, using TypeScript, Next.js, Auth0, MongoDB, and Python.",
 			"text1": "I love building useful products and continuously learning, especially about architecture and application scaling.",
 			"text2": "When I'm not coding, I enjoy board games 🎲, airsoft 🔫, basketball 🏀, and craft beer 🍺.",
 			"showMore": "Show more"
@@ -25,6 +31,21 @@
 			"tools": "Tools",
 			"getting-started": "Getting started",
 			"years": "years"
+		}
+	},
+	"AboutPage": {
+		"title": "A little more about me",
+		"text1": "Hey there! I'm Alex Cantón, born in Madrid in November '97 — that time of year when people start buying nougat for no logical reason. I'm a fullstack developer and, although I officially studied Multiplatform Application Development at Francisco de Vitoria University, the truth is my real training began the day I wrestled with my first bug... and lost.",
+		"text2": "Since then, I've grown professionally in companies like <strong>Worldline</strong>, <strong>GMV Innovating Solutions</strong>, and <strong>Hamelyn</strong>, — a startup where I'm currently cranking out features like there's no tomorrow. I always have a side project on the go, because I love discovering new technologies, architectures, or any excuse that forces me to open VS Code 'for a bit'.",
+		"text3": "I'm drawn to best practices and clean solutions, which naturally leads me to explore design patterns and different architectures — though there's always more to learn. I'm also into reading about personal development and other things that don't run in the terminal.",
+		"text4": "And outside of code... well, I'm still a full-on nerd: a declared Star Wars fan (the clones, the Jedi, the intergalactic family drama...), and basketball, a sport I played for years. When I need to disconnect, I tend to dive into strategy games like Total War or Crusader Kings 3, where, funnily enough, I still end up managing empires — just without the deploys.",
+		"images": {
+			"alt1": "I live in Madrid, and yes... I'm Real Madrid fan",
+			"alt2": "This is me, pretending I know how to program."
+		},
+		"AboutHero": {
+			"text1": "I'm a Full Stack Developer with a focus on Backend, with over {years} years of experience. Specialized in technical solutions using TypeScript, but open to any technology and architecture.",
+			"text2": "Throughout my career, I've worked with JavaScript, TypeScript, and Node.js using Express.js and Next.js, as well as various technologies like Docker and Docker Compose, AWS, CI/CD..."
 		}
 	},
 	"es": "Spanish",

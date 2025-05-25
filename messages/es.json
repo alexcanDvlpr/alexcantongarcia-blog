@@ -3,7 +3,13 @@
 		"home": "Inicio",
 		"about": "Sobre mí",
 		"blog": "Blog",
-		"greetings": "Hola"
+		"greetings": "Hola",
+		"routes": {
+			"home": "/",
+			"about": "/quien-soy",
+			"blog": "/blog",
+			"greetings": "/asas"
+		}
 	},
 	"HomePage": {
 		"HeroSection": {
@@ -25,6 +31,21 @@
 			"tools": "Herramientas",
 			"getting-started": "Iniciando",
 			"years": "años"
+		}
+	},
+	"AboutPage": {
+		"title": "Un poquito más sobre mí",
+		"text1": "¡Muy buenas! Soy Alex Cantón, nací en Madrid en Noviembre del '97, ese mes en el que la gente ya está comprando turrón sin ningún tipo de sentido. Soy desarrollador fullstack y, aunque oficialmente estudié Desarrollo de Aplicaciones Multiplataforma en la Universidad Francisco de Vitoria, la verdad es que mi formación real empezó el día que me peleé con mi primer bug... y perdí.",
+		"text2": "Desde entonces he ido creciendo profesionalmente en empresas como <strong>Worldline</strong>, <strong>GMV Innovating Solutions</strong> y <strong>Hamelyn</strong>, Startup en la que me encuentro actualmente creando features como churros. Además, siempre tengo algún proyecto personal entre manos, porque me encanta descubrir nuevas tecnologías, arquitecturas o cualquier excusa que me obligue a abrir VS Code 'un ratito'.",
+		"text3": "Me atraen las buenas prácticas, las soluciones limpias y eso me lleva a investigar sobre patrones de diseño y distintas arquitecturas, aunque nunca se deja de aprender. También me gusta leer sobre desarrollo personal y otras cosas que no se ejecutan en consola.",
+		"text4": "Y fuera del código... pues sigo siendo un friki con todas las letras: fan declarado de Star Wars (los clones, los Jedi, el drama familiar intergaláctico...), el baloncesto, deporte que practiqué durante años. Cuando necesito desconectar, me suelo perder en juegos de estrategia como Total War o Crusader Kings 3, donde curiosamente también acabo gestionando imperios... pero sin deploys.",
+		"images": {
+			"alt1": "Vivo en Madrid, y sí. Soy del Real Madrid",
+			"alt2": "Este soy yo, disimulando que sé programar"
+		},
+		"AboutHero": {
+			"text1": "Soy un Full Stack Developer, con inclinación hacia el Backend, con más de {years} años de experiencia. Centrado en soluciones técnicas en TypeScript, pero abierto a cualquier tecnología y arquitectura.",
+			"text2": "En mi carrera he trabajado JavaScript, TypeScript y Node.js con Express.js y Next.js y con distintas tecnologías como Docker y Docker Compose, AWS, CI/CD..."
 		}
 	},
 	"es": "Español",
