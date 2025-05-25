@@ -40,7 +40,8 @@
 		"text3": "Me atraen las buenas prácticas, las soluciones limpias y eso me lleva a investigar sobre patrones de diseño y distintas arquitecturas, aunque nunca se deja de aprender. También me gusta leer sobre desarrollo personal y otras cosas que no se ejecutan en consola.",
 		"text4": "Y fuera del código... pues sigo siendo un friki con todas las letras: fan declarado de Star Wars (los clones, los Jedi, el drama familiar intergaláctico...), el baloncesto, deporte que practiqué durante años. Cuando necesito desconectar, me suelo perder en juegos de estrategia como Total War o Crusader Kings 3, donde curiosamente también acabo gestionando imperios... pero sin deploys.",
 		"images": {
-			"alt1": "Vivo en Madrid, y sí. Soy del Real Madrid"
+			"alt1": "Vivo en Madrid, y sí. Soy del Real Madrid",
+			"alt2": "Este soy yo, disimulando que sé programar"
 		},
 		"AboutHero": {
 			"text1": "Soy un Full Stack Developer, con inclinación hacia el Backend, con más de {years} años de experiencia. Centrado en soluciones técnicas en TypeScript, pero abierto a cualquier tecnología y arquitectura.",

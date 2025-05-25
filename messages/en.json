@@ -40,7 +40,8 @@
 		"text3": "I'm drawn to best practices and clean solutions, which naturally leads me to explore design patterns and different architectures — though there's always more to learn. I'm also into reading about personal development and other things that don't run in the terminal.",
 		"text4": "And outside of code... well, I'm still a full-on nerd: a declared Star Wars fan (the clones, the Jedi, the intergalactic family drama...), and basketball, a sport I played for years. When I need to disconnect, I tend to dive into strategy games like Total War or Crusader Kings 3, where, funnily enough, I still end up managing empires — just without the deploys.",
 		"images": {
-			"alt1": "I live in Madrid, and yes... I'm Real Madrid fan"
+			"alt1": "I live in Madrid, and yes... I'm Real Madrid fan",
+			"alt2": "This is me, pretending I know how to program."
 		},
 		"AboutHero": {
 			"text1": "I'm a Full Stack Developer with a focus on Backend, with over {years} years of experience. Specialized in technical solutions using TypeScript, but open to any technology and architecture.",
