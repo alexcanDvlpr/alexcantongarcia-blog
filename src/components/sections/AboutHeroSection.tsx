@@ -13,7 +13,7 @@ const AboutHeroSection = async () => {
             <div className="w-full h-full max-w-4xl mx-auto flex flex-col lg:flex-row justify-evenly items-center gap-7 lg:gap-12">
                 <div className="w-10/12 lg:w-7/12">
                     <Heading level={1} className="text-[#00c896]">Alex Cantón</Heading>
-                    <div className="w-20 h-1 bg-[#00c896] mx-auto md:mx-0 mb-6"></div>
+                    <div className="w-20 h-1 bg-[#00c896] lg:mx-auto md:mx-0 mb-6"></div>
                     <p className="text-xl mt-2">{t("text1", { years: now.getFullYear() - startingDate.getFullYear() })}</p>
                     <p className="text-xl mt-2">{t("text2")}</p>
                 </div>
