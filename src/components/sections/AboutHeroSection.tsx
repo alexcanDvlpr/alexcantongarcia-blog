@@ -18,7 +18,7 @@ const AboutHeroSection = async () => {
                     <p className="text-xl mt-2">{t("text2")}</p>
                 </div>
                 <div className="w-10/12 lg:w-5/12 relative flex flex-row justify-end">
-                    <Image className="rounded-3xl backdrop-blur-md border border-transparent animated-border pulse-shadow" src={AlexAboutSectionImage} alt="Alex" width={340} height={200} />
+                    <Image className="rounded-3xl backdrop-blur-md border border-transparent animated-border pulse-shadow" src={AlexAboutSectionImage} alt="Alex" width={340} height={200} priority />
                 </div>
             </div>
         </div>
