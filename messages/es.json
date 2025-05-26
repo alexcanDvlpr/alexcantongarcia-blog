@@ -48,9 +48,11 @@
 			"text2": "En mi carrera he trabajado JavaScript, TypeScript y Node.js con Express.js y Next.js y con distintas tecnologías como Docker y Docker Compose, AWS, CI/CD..."
 		}
 	},
-	"es": "Español",
-	"en": "Inglés",
 	"BlogPage": {
-		"title": "Página de Blog"
-	}
+		"title": "Página de Blog",
+		"text": "Aquí es donde voy a escribir sobre programaciíon, tecnología y desarrollo personal. Simplemente es un rincón donde comentar todo lo que aprendo o sé y creo que puede aportar a la comunidad.",
+		"timeToRead": "{minutes} minutos de lectura"
+	},
+	"es": "Español",
+	"en": "Inglés"
 }

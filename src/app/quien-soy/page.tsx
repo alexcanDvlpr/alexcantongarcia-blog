@@ -14,32 +14,33 @@ const AboutMePage = async () => {
             <div className="absolute inset-0 opacity-65">
                 <div className="h-full w-full bg-grid-pattern bg-[length:40px_40px]"></div>
             </div>
-            <AboutHeroSection />
-            <div className="max-w-4xl mx-4 lg:mx-0 mt-8 lg:mt-8">
-                <Heading level={2}>{t("title")}</Heading>
+            <span className="z-10">
+                <AboutHeroSection />
+                <div className="max-w-4xl mx-4 lg:mx-0 mt-8 lg:mt-8">
+                    <Heading level={2}>{t("title")}</Heading>
 
-                <div className="w-full flex flex-col justify-start items-center gap-5 mt-4">
-                    <p className="text-lg">{t("text1")}</p>
-                    <figure className="text-center">
-                        <Image src={MadridImage} alt="Soy Alex Canton y vivo en Madrid y soy del Real Madrid" className="rounded-2xl" width={590} height={350} />
-                        <figcaption className="mt-2 text-sm text-gray-300">
-                            {t("images.alt1")}
-                        </figcaption>
-                    </figure>
-                    <p className="text-lg">{t.rich("text2", {
-                        strong: (chunks) => <strong className="font-semibold underline">{chunks}</strong>,
-                    })}</p>
-                    <figure className="text-center">
-                        <Image src={AlexImage} alt="Este soy yo disimulando que me gustan las buenas prácticas" className="rounded-2xl" width={590} height={350} />
-                        <figcaption className="mt-2 text-sm text-gray-300">
-                            {t("images.alt2")}
-                        </figcaption>
-                    </figure>
-                    <p className="text-lg">{t("text3")}</p>
-                    <p className="text-lg">{t("text4")}</p>
+                    <div className="w-full flex flex-col justify-start items-center gap-5 mt-4">
+                        <p className="text-lg">{t("text1")}</p>
+                        <figure className="text-center">
+                            <Image src={MadridImage} alt="Soy Alex Canton y vivo en Madrid y soy del Real Madrid" className="rounded-2xl" width={590} height={350} />
+                            <figcaption className="mt-2 text-sm text-gray-300">
+                                {t("images.alt1")}
+                            </figcaption>
+                        </figure>
+                        <p className="text-lg">{t.rich("text2", {
+                            strong: (chunks) => <strong className="font-semibold underline">{chunks}</strong>,
+                        })}</p>
+                        <figure className="text-center">
+                            <Image src={AlexImage} alt="Este soy yo disimulando que me gustan las buenas prácticas" className="rounded-2xl" width={590} height={350} />
+                            <figcaption className="mt-2 text-sm text-gray-300">
+                                {t("images.alt2")}
+                            </figcaption>
+                        </figure>
+                        <p className="text-lg">{t("text3")}</p>
+                        <p className="text-lg">{t("text4")}</p>
+                    </div>
                 </div>
-
-            </div>
+            </span>
         </div>
     )
 }

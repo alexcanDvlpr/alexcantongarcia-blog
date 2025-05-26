@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import Post from "@/components/shared/Post";
 import { getFileMetadataBySlug, getPostBySlug } from "@/lib/mdx";
 import { locales } from "@/i18n/request";
+import { PostMetadata } from "@/shared";
+import readingTime from "reading-time";
 
 interface Props {
 	params: Promise<{ slug: string }>;
@@ -11,8 +13,12 @@ interface Props {
 
 export default async function Page({ params }: Props) {
 	const { slug } = await params;
-	const post = await getPostBySlug(slug);
-	return <Post source={post} />;
+	const { content: post, data: metadata } = await getPostBySlug(slug);
+	return (
+		<div className="max-w-4xl mx-auto min-h-screen">
+			<Post source={post} metadata={metadata as PostMetadata} />;
+		</div>
+	)
 }
 
 export function generateStaticParams() {

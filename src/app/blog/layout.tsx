@@ -2,8 +2,12 @@ import { ReactNode } from "react";
 
 export default function BlogMdxLayout({ children }: { children: ReactNode }) {
 	return (
-		<div className="w-full container mx-auto prose prose-headings:mt-8 prose-headings:font-semibold prose-headings:text-black prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg dark:prose-headings:text-white">
-			{children}
+		<div className="w-full min-h-screen py-24 lg:py-30 flex flex-col justify-start items-center bg-gray-900 text-white relative">
+			{/* Grid Background */}
+			<div className="absolute inset-0 opacity-65">
+				<div className="h-full w-full bg-grid-pattern bg-[length:40px_40px]"></div>
+			</div>
+			<div className="w-full z-20">{children}</div>
 		</div>
 	);
 }
