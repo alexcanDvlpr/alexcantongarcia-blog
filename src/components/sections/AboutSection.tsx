@@ -29,7 +29,7 @@ const AboutSection = async () => {
 					<p className="text-base sm:text-lg text-gray-600">{t("AboutSection.text1")}</p>
 					<p className="text-base sm:text-lg text-gray-600">{t("AboutSection.text2")}</p>
 
-					<Link href="/about" className="text-[#00c896] text-base sm:text-lg hover:underline font-semibold">
+					<Link href={t("routes.about")} className="text-[#00c896] text-base sm:text-lg hover:underline font-semibold">
 						{t("AboutSection.showMore")}
 					</Link>
 				</div>

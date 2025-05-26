@@ -31,6 +31,9 @@
 			"tools": "Herramientas",
 			"getting-started": "Iniciando",
 			"years": "años"
+		},
+		"routes": {
+			"about": "/quien-soy"
 		}
 	},
 	"AboutPage": {

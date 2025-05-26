@@ -31,6 +31,9 @@
 			"tools": "Tools",
 			"getting-started": "Getting started",
 			"years": "years"
+		},
+		"routes": {
+			"about": "/about-me"
 		}
 	},
 	"AboutPage": {
