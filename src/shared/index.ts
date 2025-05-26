@@ -7,6 +7,7 @@ export interface PostMetadata {
 	description: string;
 	tags: string[];
 	slug: string;
+	thumbnail: string;
 }
 
 export const sleep = (ms: number): Promise<void> =>

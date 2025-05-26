@@ -20,8 +20,8 @@ export const getPostBySlug = async (slug: string) => {
 		"utf-8",
 	);
 
-	const { content } = matter(mdxSource);
-	return content;
+	const { content, data } = matter(mdxSource);
+	return { content, data };
 };
 
 export const getAllFileMetada = async () => {
@@ -39,6 +39,11 @@ export const getAllFileMetada = async () => {
 		return [{ ...data, slug: postSlug.replace(".mdx", "") }, ...allPost];
 	}, []);
 };
+
+export const getAllFileSortedByDate = async () => {
+	const data = await getAllFileMetada();
+	return data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
 
 export const getFileMetadataBySlug = async (
 	slug: string,
