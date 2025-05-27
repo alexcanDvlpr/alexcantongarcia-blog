@@ -3,12 +3,10 @@
 		"home": "Inicio",
 		"about": "Sobre mí",
 		"blog": "Blog",
-		"greetings": "Hola",
 		"routes": {
 			"home": "/",
 			"about": "/quien-soy",
-			"blog": "/blog",
-			"greetings": "/asas"
+			"blog": "/blog"
 		}
 	},
 	"HomePage": {

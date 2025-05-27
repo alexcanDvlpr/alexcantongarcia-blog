@@ -13,7 +13,7 @@ const BlogPage = async () => {
 				<Heading level={1} className="text-6xl uppercase">{t("title")}</Heading>
 				<p className="text-lg">{t("text")}</p>
 			</div>
-			<div className="w-full lg:w-3/4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+			<div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 				{files.map((file) => <PostCard key={file.slug} post={file} />)}
 			</div>
 		</div>
