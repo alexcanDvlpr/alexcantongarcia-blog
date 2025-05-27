@@ -8,6 +8,7 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{ hostname: "res.cloudinary.com" },
+			{ hostname: "cdn-icons-png.flaticon.com" },
 			{ hostname: "plus.unsplash.com" },
 			{ hostname: "images.unsplash.com" },
 			{ hostname: "d1csarkz8obe9u.cloudfront.net" },
@@ -15,15 +16,7 @@ const nextConfig = {
 			{ hostname: "marketplace.canva.com" },
 			{ hostname: "cdn.kwork.com" },
 		]
-	},
-	async rewrites() {
-		return [
-		{
-			source: '/about-me',
-			destination: '/quien-soy',
-		},
-		];
-	},
+	}
 };
 
 const withNextIntl = createNextIntlPlugin();

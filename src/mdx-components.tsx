@@ -3,6 +3,8 @@ import type { MDXComponents } from "mdx/types";
 import type { ReactNode } from "react";
 import CodeBlock from "./components/blog/CodeBlock";
 import { Heading } from "./components/blog/Heading";
+import AffiliateLink from "./components/AffiliateLink";
+import GithubLink from "./components/GithubLink";
 
 export const MDXOwnComponents = {
 	h1: ({ children }: { children: ReactNode }) => (
@@ -57,6 +59,8 @@ export const MDXOwnComponents = {
 		</div>
 	),
 	CodeBlock: (props: any) => <CodeBlock {...props} />,
+	AffiliateLink: (props: any) => <AffiliateLink {...props} />,
+	GithubLink: (props: any) => <GithubLink {...props} />
 };
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

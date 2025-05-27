@@ -2,13 +2,13 @@ import AboutMePage from "@/components/pages/AboutMePage";
 import { getUserLocale } from "@/lib/locale";
 import { redirect } from "next/navigation";
 
-const AboutMePageEs = async () => {
+const AboutMePageEn = async () => {
     const locale = await getUserLocale();
-    if (locale === "en") {
-        redirect('/about-me')
+    if (locale === "es") {
+        redirect('/quien-soy')
     }
 
     return <AboutMePage />
 }
 
-export default AboutMePageEs;
+export default AboutMePageEn;

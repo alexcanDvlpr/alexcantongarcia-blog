@@ -3,15 +3,17 @@ import { PostMetadata } from "@/shared";
 import Tags from "./Tags";
 import Image from "next/image";
 import { Heading } from "./blog/Heading";
+import { getUserLocale } from "@/lib/locale";
 
 type Props = {
     post: PostMetadata;
 }
 
-const PostCard = ({ post }: Props) => {
+const PostCard = async ({ post }: Props) => {
+    const locale = await getUserLocale();
 
     return (
-        <Link href={`/blog/${post.slug}`} className="flex-1 bg-[#011627]/80 rounded-lg group">
+        <Link href={`/blog/${locale}/${post.slug}`} className="flex-1 bg-[#011627]/80 rounded-lg group">
             <div className="overflow-hidden rounded-md">
                 <Image
                     src={post.thumbnail}
