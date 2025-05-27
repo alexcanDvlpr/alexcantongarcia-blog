@@ -1,0 +1,91 @@
+---
+title: '¿Qué es TypeScript? para Principiantes 2023'
+seo_title: '▷ ¿Qué es TypeScript? para Principiantes 2023'
+author: 'Alex Cantón'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+date: '2023-01-09'
+description: 'TypeScript es un lenguaje de programación creado en 2012 de la mano de Microsoft, muy potente que añade funcionalidades a JavaScript, haciendo desarrollos mas seguros y robustos.'
+tags:
+    - 'Desarrollo'
+    - 'TypeScript'
+---
+
+Actualmente, empezando ya el año 2023 es muy posible que hayas oido hablar o que te suene el nombre de **TypeScript**. Desde 1995, año en el que nació JavaScript, se fue convirtiendo en el lenguaje de la web por excelencia.
+
+Pero las necesidades de la actualidad no son iguales que a las de 1995, por lo tanto, se creó TypeScript en 2012. Una solución mucho más moderna y con algunas características que hacen a este lenguaje mucho más robusto que JavaScript.
+
+## ¿Qué es TypeScript?
+
+Dicho en tres palabras, TypeScript es un **superset de JavaScript**, es decir, como una capa por encima para añadirle las carencias que trae JavaScript de serie. Por lo tanto podemos decir que **Microsoft en 2012, creó un lenguaje de programación que trabaja por encima de JavaScript para dotar a este de una serie de funcionalidades**.
+
+Entre todas las particularidades que tiene TypeScript, la más famosa es el **Tipado Estático**.
+
+### Tipado Estático
+
+La característica más conocida de Typescript y por la que ha ganado tanta notoriedad es el tipado estático. Que un lenguaje sea de tipado estático es que cumple las siguientes características:
+
+- Las variables tienen un tipo de dato como por ejemplo `String`, `Number` o `Boolean`.
+- Los valores de esas variables solo pueden ser del mismo tipo que la variable.
+
+```ts
+const numero: number = 25; // OK
+const str: string = "Hello There"; // OK
+const strNum: number = "Numero"; // Error - Type 'string' is not assignable to type 'number'.
+```
+
+Esta funcionalidad está presente en otros lenguajes de programación como puede ser Java, de esta manera se cubre esa necesidad, ya que en JavaScript podemos asignar a una misma variable distintos valores de distintos tipos, es decir:
+
+```js
+const num = 13;
+num = "Hola";
+num = true;
+// Esto se podría hacer sin ningún problema
+```
+
+#### La cuestión es... ¿Por qué usar tipos?
+
+Usar el tipado dinámico, que es el que usa JavaScript, proporciona una cierta libertad que hace que sea más fácil cometer errores, sobretodo si estás empezando en el mundo de la programación, aunque los errores siempre vayan a estar ahí. Por tanto, usar tipos nos ayuda a:
+
+- Evitar **errores** ocultos en los flujos del código.
+- Poder refactorizar con seguridad.
+- Tener mayor control en sistemas grandes.
+
+Además del tipado, TypeScript nos ofrece otras características como:
+
+- Interfaces
+- Enums (Enumerados)
+- Casteo de tipos (más directo que en JS)
+- Tipado en el retorno de las funciones
+
+#### Ejemplo de código en TS
+
+```ts
+interface IProps {
+    title: string;
+    likes: number;
+    published: boolean;
+}
+
+const post: IProps = {
+    title: "Articulo 1",
+    likes: 24,
+    published: true
+}
+
+const createMessageFromPost(post: IProps): string => 
+`El post ${post.title} tiene ${post.likes} likes y ${post.published ? 'está publicado' : 'no está publicado'}.`
+
+console.log(createMessageFromPost(post));
+// Output: El post Articulo 1 tiene 24 likes y está publicado.
+```
+
+#### ¿Dónde podemos usar TypeScript?
+
+Actualmente podemos usar TypeScript tanto en el backend como en el frontend. Uno de los primeros frameworks que usó TypeScript, y por lo que ganó popularidad, fue Angular, un framework para el frontend que obliga a usar TS.
+
+Pero actualmente podemos usarlo en **Vue**, **Angular** y **React** en el frontend (además de otros frameworks) y en los proyectos del Backend desarrollados en **Node.js**. En este blog entraremos en detalle en los distintos desarrollos que podemos abordar con TypeScript.
+
+## Conclusión
+
+Como has podido observar, TypeScript es lo mismo que JavaScript, pero con una serie de funcionalidades extra, que potenciarán nuestro desarrollo. Con lo cual, la curva de aprendizaje es pequeña y podemos ir aplicando poco a poco todas las novedades y así poder crear sistemas robustos en uno de los lenguajes más famosos, usados y queridos de la actualidad.

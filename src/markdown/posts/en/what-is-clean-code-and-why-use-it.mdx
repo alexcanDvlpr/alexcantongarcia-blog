@@ -1,0 +1,115 @@
+---
+title: 'What is Clean Code and why use it?'
+seo_title: '▷ What is Clean Code and why use it?'
+author: 'Alex Cantón'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+date: '2022-03-01'
+description: 'Clean Code by Robert C. Martin, also known as Uncle Bob, is one of the books that every programmer should read at some point in their life, whether you are a junior or senior programmer, you will always find some advice that you can apply to make your code cleaner, easier to read and scalable.'
+tags:
+    - 'Desarrollo'
+---
+
+**Clean Code by Robert C. Martin** (also known as [Uncle Bob](https://es.wikipedia.org/wiki/Robert_C._Martin)) is one of the books that every programmer should read at some point in their life, whether you're Junior or Senior, whether it's the first time you read it or the twentieth time, you always find some advice you can apply.
+
+**Robert C. Martin** is a software engineer and author from the United States 🇺🇸 who, besides this gem for programmer reading, has created other books including **Clean Architecture** or **The Clean Coder**, and today we'll focus on Clean Code, certainly the book that has given him the most worldwide recognition.
+
+If you want to get **Uncle Bob's** book, I leave you here [the affiliate link](https://amzn.to/3h7A2IU) so you can purchase it on Amazon.
+
+![Clean Code by Robert C. Martin](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1645635360/Blog/Posts/clean-code/cleancode_k4ktv9.webp)
+
+Programming for those who are just starting can be a world of chaos, among the numerous languages, and then we humans are each our own person, not to mention that we are the strangest things that exist, and if we can do something in the fastest and worst way... we do it! So **Uncle Bob**, in this book, proposes following some guidelines and a series of good practices so that the world of code isn't chaos, more than it already is.
+
+A clear example of what this book wants to achieve is the following image:
+
+![Summary of what Clean and organized Code achieves.](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1645634882/Blog/Posts/clean-code/Clean-Code-Resumen_mv6iik.webp)
+
+Instead of saying "This code is shit" numerous times and in different ways, Uncle Bob proposes being organized and writing code when necessary and being concise.
+
+**Clean Code** consists of 17 enriching chapters, and I'll comment on some of the pearls that Uncle Bob leaves us in these chapters.
+
+### The Boy Scout Rule
+
+The Boy Scout rule makes a lot of sense and can be extrapolated to many areas in life. According to the book, this rule is that boy scouts try to leave the places they go through a little better than how they found them. That is, speaking of development, we must leave the code we see and touch a little better than how we found it.
+
+For example, if you're going to develop maintenance or touch something that a colleague has done and we see something that can be improved, the ideal would be to dedicate some time to improve that block of code and discuss it with the team so that gradually the code gets better and we don't accumulate what is called **"Technical Debt"**.
+
+Technical debt **is the cost of maintaining and/or fixing poorly built software, usually due to doing it quickly or without attention**.
+
+### Functions and Methods
+
+Functions and methods are blocks of code that perform a specific function in the code, and what Robert comments in the book is that these blocks should:
+
+- Be about 20 lines approximately.
+- Have a descriptive name: `getAllBooksFromAuthorId()`
+- The name doesn't matter if it's short or long, in fact, the longer it can be, the more descriptive.
+- The Single Responsibility Principle
+- Recommended up to 2 parameters, 3 is already too many.
+
+### Single Responsibility Principle
+
+Regarding methods and functions, the priority that, as developers, we must achieve is **Single Responsibility**, this means that a function must do one single thing, what its name indicates.
+
+With the Single Responsibility Principle, we avoid surprises that a method does more things than its name indicates. For example:
+
+```js
+class Jedi {
+    constructor(name, power, lightsiberColor) {
+        this.name = name;
+        this.power = power;
+        this.lightsiberColor = lightsiberColor;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getPower() {
+        return this.power;
+    }
+
+    getLightsiberColor() {
+        return this.lightsiberColor;
+    }
+
+    setName(newName) {
+        this.name = newName;
+    }
+
+    setPower(newPower) {
+        this.power = newPower;
+    }
+
+    setLightsiberColor(newLightsaberColor) {
+        this.lightsiberColor = newLightsaberColor;
+    }
+}
+```
+
+In this example, all variables and functions are exclusively from the `Jedi` class and we don't mix other possible classes in it.
+
+### Comments
+
+Another important thing is comments, although we're told in the book that good code speaks for itself, the same code can pass through the hands of countless programmers, there's everything. A project might always be touched by the same 4 or 5 people, or a longer-lasting project might have about 10 people pass through it per year because it has high turnover.
+
+This means that if a block of code, a function, or method is commented, it will give the programmer context of what that block does and ease, that's why **it's very important to write good comments** and for example in the case of **JS** we can add a comment that serves as documentation, it's called JSDoc, which we'll talk about in another post.
+
+```js
+const folder = './folder1/'
+const filename = 'file.txt'
+
+// We join the folder and filename variables to get the complete path
+const path = path.join(folder, filename);
+console.log(path);
+// Output: './folder1/file.txt'
+```
+
+This example is very simple, bordering on unnecessary, but these comments are useful when there's a complex block of code and you have to explain to the next developer who touches that code (which could be yourself in a few months) what it does.
+
+### Conclusion. Why read Clean Code?
+
+As I mentioned at the beginning of the post, the Clean Code book is very extensive, and gives many rules or guidelines to explain them in detail in a post.
+
+But these can be some of the things that **Uncle Bob** mentions that a junior programmer can stick to at the beginning of their career. Because when we enter a company, we always have to get used to the standard that company has, the code formatters (which are sometimes customized), some processes or ways of doing things in Software Architecture, which from a junior's experience, there are concepts that might escape a bit.
+
+And don't feel bad if in the first code reviews (Merge Request or Pull Request) they tell you that you have to change the name of some variable to make it more descriptive, or that you're missing some comments... Code reviews are for Juniors, Mids, or Seniors, we can all miss something or something might not be clear to the rest of the team. 

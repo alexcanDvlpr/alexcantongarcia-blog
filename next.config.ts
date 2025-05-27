@@ -1,11 +1,13 @@
 import createMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
+import { hostname } from "os";
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
 	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 	images: {
 		remotePatterns: [
+			{ hostname: "res.cloudinary.com" },
 			{ hostname: "plus.unsplash.com" },
 			{ hostname: "images.unsplash.com" },
 			{ hostname: "d1csarkz8obe9u.cloudfront.net" },

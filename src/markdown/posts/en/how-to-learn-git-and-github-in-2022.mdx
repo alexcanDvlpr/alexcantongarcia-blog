@@ -1,0 +1,142 @@
+---
+title: 'How to Learn Git and GitHub in 2022?'
+seo_title: '▷ How to Learn Git and GitHub in 2022? 😎'
+author: 'Alex Cantón'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+date: '2021-12-20'
+description: 'If you are a beginner, you should learn the most basic Git commands, the most used Version Control System today. Get familiar with the system created by Linus Torvalds to manage your repositories on GitHub. Learn to use git clone, git add, git remote, git push, git pull, git commit, and git status.'
+tags:
+    - 'Git'
+    - 'GitHub'
+---
+![Git and Github](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/git-github_vr0t6u.webp)
+
+In this article, we are going to see what **GitHub** is and how to apply the most basic Git commands to start using it in our web projects. In this same blog, I have a post about [Installing GIT to manage your web projects](https://www.alexcantongarcia.es/blog/instala-git-para-gestionar-tus-proyectos-web).
+
+If you don't have Git installed, I invite you to check that out first, otherwise... Let's get started!
+
+## What is GitHub?
+
+GitHub is a web service that allows developers to store their code in the cloud and access it through a web platform. It also allows us to create a profile to manage our projects or repositories and use it as a social network.
+
+It is owned by **Microsoft** and allows us to have public or private repositories. For each repository, it allows us to have an **issues** section, **continuous integration** and **continuous delivery**, known as **CI/CD**.
+
+You can visit GitHub here: [https://github.com/](https://github.com/)
+
+## How to start?
+
+The first thing to start with **Git** is to have a repository on Github (or another provider) and download (clone) its content, even if it's empty, to work from the base of the remote repository on Github.
+
+Let's get to the point and answer the big question... **How do we clone a repository from Github?**
+
+### git clone
+
+With this command, we will download a project from Github or another provider to our local machine. We just need the project URL, available in the repository, for example from GitHub:
+
+![Repository URL. Available in HTTP, with SSH key and by GithubCLI](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/clone_pxji59.webp)
+
+In this case, copy the URL and run in a console:
+
+```shell
+$ git clone <project_url>
+```
+
+We can set an alias for the project, so that on our local machine, it is named as we want. For example, remotely it can be called `cartas-magic-backend2` and we want to call it simply `magic-backend`. This alias is applied as follows:
+
+```shell
+$ git clone <project_url> <project_alias>
+```
+
+###  git remote
+
+On the other hand, initializing a git project only allows us to operate locally. If we want to upload our code to a remote repository, we have to connect our local repository with the remote one as follows:
+
+```shell
+$ git remote add <origin> <project_url>
+```
+
+Usually, GitHub or GitLab, when creating a repository, gives you some guide commands to start. These commands are to initialize the project locally and connect the local with the remote as follows:
+
+![GitHub Guide Commands](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/gitremote_iaa3k8.webp)
+
+By convention, the origin of the repository is usually **origin**, but you can have more remote connections, such as origin for local development and another remote repository for the client that you call delivery.
+
+### git status
+
+Once we have configured and connected our project, we create the files and start our development. And when we have the files and their changes, git can show us which files have been changed and which remain the same as in the previous change.
+
+To check which files we have changed, we run:
+
+```shell
+$ git status
+```
+
+This command will return (if there are changes) something like this:
+
+![Result of running git status in the command console](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/gitstatus_yv4idi.webp)
+
+### git add
+
+Once we have changes in our project, to make a first upload to our remote repository we have to use the `add` command with a parameter, the name or names of the files we want to add, or a `.` to add everything.
+
+With this execution, we add the changes to the Git staging area.
+
+```shell
+# By files
+$ git add file1.txt test/test1.js
+
+# Add everything
+$ git add . 
+```
+
+This step allows us to create a commit (a descriptive message) for those changes.
+
+### git commit
+
+In this step, we add a message to group all the files or changes applied with the `git add` command. Commit messages could be a whole article, but a good commit should briefly and concisely explain what the changes do, no matter how many or few they are. 
+
+If we run `git commit` directly, the default text editor will open, such as **nano**, **vi**, **vim**, or **VSCode**, and there we can write our commit. However, if the commit is going to be a relatively short message, we can use the `-m` flag:
+
+```shell
+$ git commit -m "Here would go our descriptive message of our changes"
+```
+
+With this, we would have the changes prepared and described, the next step would be to upload it to our repository.
+
+### git push
+
+The `git push` command is what we use to upload our prepared (committed) changes to our remote repository, previously configured with `git remote`
+
+Once we have the changes prepared and correctly described with a commit, we run:
+
+```shell
+$ git push <origin_name> <branch_name>
+```
+
+And this will upload the changes to our remote repository, to the origin and branch (by default **master**) that we indicate, for example:
+
+```shell
+$ git push origin master
+```
+
+### git pull
+
+As I mentioned at the beginning of the post, in a software development project it may happen that we work with other colleagues, who also make changes and uploads simultaneously.
+
+To avoid conflicts in our work, we have to keep the project aligned and for that we have the `git pull` command, to download the changes that are in the remote repository.
+
+It is very similar to the push command:
+
+```shell
+$ git pull <origin_name> <branch_name>
+```
+Applying it to a real case, it would look like this:
+
+```shell
+$ git pull origin master
+```
+
+
+### Conclusion
+Git is a version control system as broad as it is complex, but getting started is as simple as knowing these commands. With these commands, you can start getting familiar with the git system, the command console, with a provider like **GitHub**, and once you master this, continue expanding your knowledge within this version control system. 

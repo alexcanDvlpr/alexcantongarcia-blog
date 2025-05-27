@@ -15,7 +15,7 @@ export default async function Page({ params }: Props) {
 	const { content: post, data: metadata } = await getPostBySlug(slug);
 	return (
 		<div className="max-w-4xl mx-auto min-h-screen px-4 md:px-7 lg:px-0">
-			<Post source={post} metadata={metadata as PostMetadata} />;
+			<Post source={post} metadata={metadata as PostMetadata} />
 		</div>
 	)
 }
