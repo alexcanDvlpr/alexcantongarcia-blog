@@ -1,0 +1,91 @@
+---
+title: 'What is TypeScript? for Beginners 2023'
+seo_title: '▷ What is TypeScript? for Beginners 2023'
+author: 'Alex Cantón'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+date: '2023-01-09'
+description: 'TypeScript is a programming language created in 2012 by Microsoft, very powerful that adds functionality to JavaScript, making developments more secure and robust.'
+tags:
+    - 'Desarrollo'
+    - 'TypeScript'
+---
+
+Currently, as we start 2023, it's very likely that you've heard of or are familiar with the name **TypeScript**. Since 1995, the year JavaScript was born, it became the language of the web par excellence.
+
+But current needs are not the same as in 1995, therefore, TypeScript was created in 2012. A much more modern solution with some features that make this language much more robust than JavaScript.
+
+## What is TypeScript?
+
+In three words, TypeScript is a **superset of JavaScript**, that is, like a layer on top to add the features that JavaScript lacks out of the box. Therefore, we can say that **Microsoft in 2012 created a programming language that works on top of JavaScript to provide it with a series of functionalities**.
+
+Among all the particularities that TypeScript has, the most famous one is **Static Typing**.
+
+### Static Typing
+
+The most well-known feature of TypeScript and the one that has gained it so much notoriety is static typing. For a language to be statically typed means it meets the following characteristics:
+
+- Variables have a data type such as `String`, `Number`, or `Boolean`.
+- The values of these variables can only be of the same type as the variable.
+
+```ts
+const number: number = 25; // OK
+const str: string = "Hello There"; // OK
+const strNum: number = "Number"; // Error - Type 'string' is not assignable to type 'number'.
+```
+
+This functionality is present in other programming languages such as Java, thus covering this need, since in JavaScript we can assign different values of different types to the same variable, that is:
+
+```js
+const num = 13;
+num = "Hello";
+num = true;
+// This could be done without any problem
+```
+
+#### The question is... Why use types?
+
+Using dynamic typing, which is what JavaScript uses, provides a certain freedom that makes it easier to make mistakes, especially if you're starting in the world of programming, although errors will always be there. Therefore, using types helps us to:
+
+- Avoid hidden **errors** in code flows.
+- Be able to refactor safely.
+- Have greater control in large systems.
+
+Besides typing, TypeScript offers us other features such as:
+
+- Interfaces
+- Enums
+- Type casting (more direct than in JS)
+- Function return typing
+
+#### Example of TS code
+
+```ts
+interface IProps {
+    title: string;
+    likes: number;
+    published: boolean;
+}
+
+const post: IProps = {
+    title: "Article 1",
+    likes: 24,
+    published: true
+}
+
+const createMessageFromPost(post: IProps): string => 
+`The post ${post.title} has ${post.likes} likes and ${post.published ? 'is published' : 'is not published'}.`
+
+console.log(createMessageFromPost(post));
+// Output: The post Article 1 has 24 likes and is published.
+```
+
+#### Where can we use TypeScript?
+
+Currently, we can use TypeScript both in the backend and frontend. One of the first frameworks that used TypeScript, and why it gained popularity, was Angular, a frontend framework that requires using TS.
+
+But currently, we can use it in **Vue**, **Angular**, and **React** in the frontend (besides other frameworks) and in Backend projects developed in **Node.js**. In this blog, we'll go into detail about the different developments we can tackle with TypeScript.
+
+## Conclusion
+
+As you may have observed, TypeScript is the same as JavaScript, but with a series of extra functionalities that will enhance our development. Therefore, the learning curve is small, and we can gradually apply all the new features and thus create robust systems in one of the most famous, used, and beloved languages of today. 

@@ -3,25 +3,27 @@ import type { MDXComponents } from "mdx/types";
 import type { ReactNode } from "react";
 import CodeBlock from "./components/blog/CodeBlock";
 import { Heading } from "./components/blog/Heading";
+import AffiliateLink from "./components/AffiliateLink";
+import GithubLink from "./components/GithubLink";
 
 export const MDXOwnComponents = {
 	h1: ({ children }: { children: ReactNode }) => (
-		<Heading level={1}>{children}</Heading>
+		<Heading level={1} className="mb-3 mt-2">{children}</Heading>
 	),
 	h2: ({ children }: { children: ReactNode }) => (
-		<Heading level={2}>{children}</Heading>
+		<Heading level={2} className="mb-3 mt-2">{children}</Heading>
 	),
 	h3: ({ children }: { children: ReactNode }) => (
-		<Heading level={3}>{children}</Heading>
+		<Heading level={3} className="mb-3 mt-2">{children}</Heading>
 	),
 	h4: ({ children }: { children: ReactNode }) => (
-		<Heading level={4}>{children}</Heading>
+		<Heading level={4} className="mb-3 mt-2">{children}</Heading>
 	),
 	h5: ({ children }: { children: ReactNode }) => (
-		<Heading level={5}>{children}</Heading>
+		<Heading level={5} className="mb-3 mt-2">{children}</Heading>
 	),
 	h6: ({ children }: { children: ReactNode }) => (
-		<Heading level={6}>{children}</Heading>
+		<Heading level={6} className="mb-3 mt-2">{children}</Heading>
 	),
 	a: (props: any) => (
 		<a className="text-blue-700 underline" {...props}>
@@ -57,6 +59,8 @@ export const MDXOwnComponents = {
 		</div>
 	),
 	CodeBlock: (props: any) => <CodeBlock {...props} />,
+	AffiliateLink: (props: any) => <AffiliateLink {...props} />,
+	GithubLink: (props: any) => <GithubLink {...props} />
 };
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

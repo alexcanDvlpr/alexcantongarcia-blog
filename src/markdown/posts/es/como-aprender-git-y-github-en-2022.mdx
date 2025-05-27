@@ -1,0 +1,142 @@
+---
+title: '¿Cómo aprender Git y GitHub en 2022?'
+seo_title: '▷ ¿Cómo aprender Git y GitHub en 2022? 😎'
+author: 'Alex Cantón'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+date: '2021-12-20'
+description: 'Si eres principiante, debes aprender los comandos más básicos de Git, el Control de Versiones más usado de la actualidad. Familiarizate con el sistema creado por Linus Torvals para la gestión de tus repositorios en GitHub. Aprende a usar git clone, gi add, git remote, git push, git pull, git commit y git status.'
+tags:
+    - 'Git'
+    - 'GitHub'
+---
+![Git y Github](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/git-github_vr0t6u.webp)
+
+En este artículo vamos a ver qué es **GitHub** y como aplicar los comandos de Git más básicos para poder ir aplicándolo a nuestros proyectos web. En este mismo blog tengo un post sobre [Instalar GIT para gestionar tus proyectos web](https://www.alexcantongarcia.es/blog/instala-git-para-gestionar-tus-proyectos-web).
+
+Si no tienes Git instalado te invito a echarle un vistazo antes que a este, sino... ¡Vamos a darle caña!
+
+## ¿Qué es GitHub?
+
+GitHub es un servicio web, que nos permite a los desarrolladores almacenar nuestro código en la nube, y poder acceder a él a través de una plataforma web. También nos permite tener creado un perfil para gestionar nuestros proyectos o repositorios y usarlo así a modo de red social.
+
+Es propiedad de **Microsoft** y nos permite tener repositorios públicos o privados. Por cada repositorio nos permite tener una sección de **issues**, **integración contínua** y **entrega contínua**, lo que se denomina **CI/CD**.
+
+Puedes visitar GitHub aquí: [https://github.com/](https://github.com/)
+
+## ¿Cómo empezar?
+
+Lo primero para empezar con **Git** será tener un repositorio en Github (u otro proveedor) y bajarnos (clonarnos) su contenido, aunque sea vacio, para poder trabajar desde la base del repositorio remoto de Github.
+
+Vamos con la chicha y a por la gran pregunta... **¿Cómo nos clonamos un repositorio de Github?**
+
+### git clone
+
+Con este comando nos descargaremos un proyecto que se encuentre en Github u otro proveedor, para traerlo a nuestro equipo local simplemente necesitaremos la URL del proyecto, disponible en el repositorio, por ejemplo de GitHub:
+
+![URL del Repositorio. Disponible en HTTP, con clave SSH y por GithubCLI](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/clone_pxji59.webp)
+
+En este caso, copiamos la URL y ejecutamos en una consola:
+
+```shell
+$ git clone <url_proyecto>
+```
+
+Podemos poner un alias al proyecto, para que en nuestro equipo local, se llame como nosotros queramos. Es decir, en remoto se puede llamar `cartas-magic-backend2` y nosotros querer llamarlo simplemente `magic-backend`. Este alias se aplica de la siguiente manera:
+
+```shell
+$ git clone <url_proyecto> <alias_proyecto>
+```
+
+###  git remote
+
+En cambio, iniciar un proyecto de git, solo nos sirve para operar en local, si queremos subir nuestro código a un repositorio en remoto hay que conectar nuestro repositorio local con el remoto de la siguiente manera:
+
+```shell
+$ git remote add <origen> <url_proyecto>
+```
+
+Normalmente GitHub o GitLab, cuando se crea un repositorio, te da unos comandos de guía para empezar. Esos comandos son para iniciar el proyecto en local y conectar el local con el remoto de la siguiente manera:
+
+![Comandos de Guía de Github](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/gitremote_iaa3k8.webp)
+
+Por nomenclatura, el origen del repositorio suele ser **origin** (de origen), pero puedes tener más conexiones remotas, como por ejemplo origin para el desarrollo en local y otro repositorio remoto que sea del cliente que le llames delivery.
+
+### git status
+
+Una vez tenemos configurado y conectado nuestro proyecto, creamos los archivos y empezamos nuestro desarrollo. Y cuando ya tenemos los ficheros y sus cambios, git nos puede mostrar qué ficheros han sido cambiados y cuales siguen igual que en el cambio anterior.
+
+Para comprobar qué ficheros hemos cambiado ejecutaremos:
+
+```shell
+$ git status
+```
+
+Este comando nos devolverá (en caso de tener cambios) algo así:
+
+![Resultado de ejecutar git status en la consola de comandos](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/gitstatus_yv4idi.webp)
+
+### git add
+
+Una vez tenemos cambios en nuestro proyecto, para hacer una primera subida a nuestro repositorio remoto tendremos que usar el comando `add` con un parámetro, nombre o nombres de los ficheros que queremos añadir, o un `.` para añadir todo.
+
+Con esta ejecución, añadiremos los cambios a la fase de preparación de Git.
+
+```shell
+# Por ficheros
+$ git add archivo1.txt test/test1.js
+
+# Añadir todo
+$ git add . 
+```
+
+Este paso nos permite poder crear un commit (un mensaje descriptivo) a esos cambios.
+
+### git commit
+
+En este paso añadiremos un mensaje para agrupar todos los ficheros o cambios aplicados con el comando `git add`. Los mensajes de commit, dan para otro artículo extenso, pero un buen commit tiene que explicar de forma breve y concisa qué hacen esos cambios que se han realizado, por pocos o muchos que sean. 
+
+Si ejecutamos directamente `git commit` se nos abrirá el editor de texto que tengamos configurado por defecto, como pueden ser **nano**, **vi**, **vim** o **VSCode** y ahí podremos escribir nuestro commit, sin embargo, si el commit va a ser un mensaje relativamente corto, podemos usar el flag `-m`:
+
+```shell
+$ git commit -m "Aqui iría nuestro mensaje descriptivo de nuestros cambios"
+```
+
+Con esto ya tendríamos los cambios preparados y descritos, el siguiente paso sería subirlo a nuestro repositorio.
+
+### git push
+
+El comando `git push` es el que usaremos para subir nuestros cambios ya preparados (commiteados) a nuestro repositorio remoto, previamente configurado con `git remote`
+
+Una vez tengamos los cambios preparados y descritos correctamente con un commit, ejecutaremos:
+
+```shell
+$ git push <nombre_origen> <nombre_rama>
+```
+
+Y esto subirá los cambios a nuestro repositorio remoto, al origen y rama (por defecto **master**) que le indiquemos, como podría ser lo siguiente:
+
+```shell
+$ git push origin master
+```
+
+### git pull
+
+Como he comentado al principio del post, en un proyecto de desarrollo de software se puede dar el caso de que trabajemos con otros compañeros, que también hacen cambios y subidas simultaneamente.
+
+Para que no haya conflictos en nuestro trabajo, tendremos que mantener el proyecto alineado y para eso tenemos el comando `git pull`, para bajarnos los cambios que esten en el repositorio remoto.
+
+Es muy similar al comando push:
+
+```shell
+$ git pull <nombre_origen> <nombre_rama>
+```
+Aplicándolo al caso real, quedaría así:
+
+```shell
+$ git pull origin master
+```
+
+
+### Conclusión
+Git es un sistema de control de versiones tan amplio como complejo, pero empezar es tan simple como conocer estos comandos. Con estos comandos ya puedes empezar a familiarizarte con el sistema de git, la consola de comandos, con algún proveedor como **GitHub** y una vez dominemos esto, seguir ampliando conocimientos dentro de este sistema de control de versiones.

@@ -15,22 +15,23 @@ export default async function Page({ params }: Props) {
 	const { content: post, data: metadata } = await getPostBySlug(slug);
 	return (
 		<div className="max-w-4xl mx-auto min-h-screen px-4 md:px-7 lg:px-0">
-			<Post source={post} metadata={metadata as PostMetadata} />;
+			<Post source={post} metadata={metadata as PostMetadata} />
 		</div>
 	)
 }
 
 export function generateStaticParams() {
-	const filesByLocale = locales.map((locale) => {
+	const allParams = locales.flatMap((locale) => {
 		const postsDir = path.join(process.cwd(), "src/markdown/posts", locale);
-		return fs.readdirSync(postsDir);
+		const files = fs.readdirSync(postsDir);
+
+		return files.map((file) => ({
+			locale,
+			slug: file.replace(/\.mdx?$/, ""),
+		}));
 	});
 
-	const files = [...filesByLocale.flat()];
-
-	return files.map((file) => ({
-		slug: file.split(".")[0],
-	}));
+	return allParams;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

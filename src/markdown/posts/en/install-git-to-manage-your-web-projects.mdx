@@ -1,0 +1,90 @@
+---
+title: 'Install GIT to manage your web projects'
+seo_title: '▷ Install GIT to manage your web projects ✅'
+author: 'Alex Cantón'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+date: '2021-12-14'
+description: '🔥 Step-by-step installation of Git from scratch on Windows or Mac OS 🔥. Installation of the most used Version Control System today for all types of projects. Git, invented by Linus Torvalds, is one of the essential tools in 2022.'
+tags:
+    - 'Git'
+---
+
+Nowadays, when we talk about a web development project, whether professional or a university project, we want that project not to get lost or deleted, and if someone messes up or there's a bug, to know when it happened and what it affects so we can fix it quickly, or simply to easily extract a `.zip` to deliver the whole project, and countless other things we can think of, right?
+
+In short, it would be amazing if there was a decentralized code storage and management tool where 1 to X people could participate.
+
+This type of tool I'm talking about is a **Version Control System** and today, and the reason you're reading this article, is because you want to learn how to use [GIT](https://git-scm.com/)
+
+## What is Git?
+
+As I mentioned earlier, **Git** is today the **most well-known and used version control system** in the world, created by **[Linus Torvalds](https://www.ecured.cu/Linus_Torvalds)**, developer of the Linux Kernel. Its main feature is that it is **distributed**, which means multiple people can work in teams on the same project.
+
+In this post, we will see the different ways to install it depending on the Operating System (OS) you use.
+
+![Linus Torvalds, creator of the GIT system](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639608819/Blog/Posts/empezar-git-en-2022/linus_w1dypy.webp)
+
+## How do we install it?
+
+For installation on both **Windows** and **Mac OS**, we can go to the [Official Git Page](https://git-scm.com/) and download the executable directly from their homepage:
+
+![Git main page with the direct download link.](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639841263/Blog/Posts/DescargarGit/descargithome_gt34aw.webp)
+
+However, here are the installation steps for the two systems I will cover in this post, **Windows** and **Mac OS**.
+
+### Windows
+The first step to install Git on our Windows system is to go to the [Git download page for Windows](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and follow the steps indicated. Basically, you have to download the Git `.exe` and run it.
+They give us two options, the **Git for Windows Setup** (full installation on your computer) and the **Git for Windows Portable ("thumbdrive edition")** (portable option).
+
+My recommendation is the full installation on your computer.
+
+![Git Download Page. We will select the Git for Windows Setup 64-bit option (depends on your computer)](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639829784/Blog/Posts/DescargarGit/git_download_ndkrnj.webp)
+
+The typical installation screen will appear, click **Next -> Next -> Next** and finish the installation.
+
+Once you click finish, the installation on Windows will be complete.
+
+### Mac OS
+For Mac OS systems, we have two installation options for the Git version control system.
+
+You can install it via the Git website, as in the previous case with Windows, or with Homebrew.
+
+#### · Git Website
+In this case, go to the Git website, to the [installation section for Mac OS](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and follow the steps indicated by Git. One of them is to use Homebrew.
+
+#### · Homebrew
+To download GIT with **Homebrew** you must have Homebrew installed.
+
+Homebrew is a **Package Manager** for Mac, from which you can install countless programs and features, such as git. To install Homebrew, run the following command in your terminal:
+```shell
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Once the command is executed, enter your administrator password, wait a few minutes for the installer to do its magic, and once the console finishes, run:
+
+```shell
+$ brew -v
+```
+
+If it shows the version, it means you have Homebrew installed!
+
+Now that we have it installed, it's time to install GIT, with the same console we had open. Run the following:
+
+```shell
+$ brew install git
+```
+
+And just like when we installed Homebrew, when the console finishes, we will have GIT installed on our Mac OS system.
+
+### Conclusion
+
+Once installed, we can now manage our web, mobile, or any type of software projects in an organized, clear, and distributed way.
+
+No matter the OS you have or the installation method you chose, you can check that the installation was successful by running the following command in the terminal.
+
+```shell
+# Git command to see the current version.
+$ git --version
+```
+With this command, you will see the current version of Git on your system, which of course means you have it installed.
+
+If you want to know more about **Git** and how to use it to get the most out of your projects, I have an introductory post called **[How to learn Git and GitHub in 2022?](https://www.alexcantongarcia.es/blog/como-aprender-git-y-github-en-2022)** 

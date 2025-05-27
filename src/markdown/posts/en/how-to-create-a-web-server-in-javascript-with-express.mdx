@@ -1,0 +1,170 @@
+---
+title: 'How to create a web server in JavaScript with Express?'
+seo_title: '🤔 How to create a web server in JavaScript with Express?'
+author: 'Alex Cantón'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+date: '2021-12-16'
+description: 'Step-by-step tutorial to create a web server in JS (Node.js) with the Express.js framework, one of the most well-known and minimalist on the market for Backend. With an average of 19,005,088 downloads on NPM (Node Package Manager)'
+tags:
+    - 'JavaScript'
+    - 'Nodejs'
+---
+
+Since JavaScript (JS) was created, it has been called the "Language of the Web", and together with some libraries like JQuery, it was considered a front-end language. But in recent years, with the appearance of **Node.js**, we can program with JS on the backend.
+
+If this is your first time reading about **Node.js**, you might be wondering... What is Node.js? You might think it's a new language based on JavaScript like **TypeScript**, but no, it's a JS runtime environment, based on Google's V8 engine, and was created by [Ryan Dahl](https://www.ecured.cu/Ryan_Lienhart_Dahl).
+
+![Ryan Dahl](https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639687783/Blog/Posts/server-node/04e9bf509eba71f9787154ed0ef3f569_ieet4d.jpg)
+
+In this blog, we will see Node from the web development point of view, but it is also used for **Web Development**, **IoT**, **Bots**, **Artificial Intelligence**, and much more.
+
+### How to create a web server?
+
+To create a web server, in this article I will use the **[Express.js](https://expressjs.com/)** library, a backend-oriented library that is very minimalist but also powerful.
+
+The first step is to create our Node project, create our directory **first-project** and run:
+
+```shell
+# Go to the directory
+$ cd first-project/
+# Create node project
+$ npm init
+```
+The console will show us the first version of our **package.json** from which we can work.
+```shell
+Press ^C at any time to quit.                                            
+package name: (first-project)                                         
+version: (1.0.0)                                                        
+description:                                                            
+entry point: (index.js)                                                 
+test command:                                                           
+git repository:                                                         
+keywords:                                                               
+author: Alex Canton                                                     
+license: (ISC)                                                          
+About to write to ~/first-project/package.json:
+                                                                        
+{                                                                       
+  "name": "first-project",                                            
+  "version": "1.0.0",                                               
+  "description": "",                                                 
+  "main": "index.js",                                               
+  "scripts": {                                                        
+    "test": "echo \"Error: no test specified\" && exit 1"        
+  },                                                                    
+  "author": "Alex Canton",                                          
+  "license": "ISC"                                                  
+}                                                                       
+                                                                        
+                                                                        
+Is this OK? (yes)
+```
+
+Once our project is created, we need to install our Express dependency, we can do it like this:
+
+```shell
+$ npm install express -S -E
+```
+
+The `-S` flag is to add it to the **dependencies** section in the `package.json` and `-E` to install the exact version. If we check the **package.json**, it would look like this:
+
+```shell
+$ cat package.json
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Cantón",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
+```
+
+Now that we have Express installed, we can start developing our server. Open your default entry file, **index.js**, and write:
+
+```js
+// Imports
+const express = require('express')
+const app = express()
+// Port
+const PORT = 3000
+// Middlewares
+app.use(express.json())
+// Start Server
+app.listen(PORT, () => {
+    console.log(`Server is running. http://localhost:${PORT}`)
+})
+```
+
+In the following points, I will explain the different steps I followed in the previous code.
+
+#### 1. Imports
+
+The first thing we need to do for our server to work is import the libraries. In this case, since the only one installed is **express**, we import it and store the library in the variable, the next step is to create a web application with the **express()** function.
+
+This application will be the one we start to have our server running.
+
+#### 2. Port
+
+This step is optional for this example, but I separated the port because in a medium/large project, the port may be parameterized depending on the environment. So it can be good practice to have it as a variable before applying it to the **.listen()** function.
+
+#### 3. Middlewares
+
+A Middleware, in general terms, is a piece of code that runs before the main request. For example, you can use a middleware for authentication, that is, create an <u>authMiddleware</u> and have it run before each server request to ensure the server is only accessible to already registered users.
+
+This particular Middleware transforms both the request (**Request**) and the response (**Response**) into a <u>**JSON**</u> format, to maintain a communication standard with clients.
+
+#### 4. Start Server
+
+In this code block, we call **app.listen(...)**, which receives as a parameter the port on which our application will be deployed and the second parameter is a callback function that will run if the application starts correctly.
+
+This execution will start our <u>backend server in Node.js</u>.
+
+#### Execution
+
+Now that we have the **index.js** file complete, we need to check that it works, for that we go to our command console and run:
+
+```shell
+$ node index.js
+```
+
+If everything works correctly, it should show the following message in the console:
+
+```shell
+Server is running. http://localhost:3000
+```
+
+But with this, we simply start a server on port 3000, but we can't access it. If we go to a browser at **http://localhost:3000** it will show the message `Cannot Get /`, this means it can't access the root, but the good news is the server is working.
+
+With that explained, let's create an access route (or **endpoint**) to access the root.
+
+#### Controller
+
+In our <u>**index.js**</u>, before the **Start Server** step, add the following code block:
+
+```js
+app.get('/', (req, res) => {
+    return res.status(200).send({ message: 'Response message' })
+})
+```
+
+With this code, our server will have an entry point at the root, using [the HTTP GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), which will return a response with status 200 ([Server response codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)) and a JSON body with the following format:
+
+```json
+{
+    "message": "Response message"
+}
+```
+#### Conclusion
+
+In this article, we have seen how we can create a web server with **JavaScript** and its best-known, minimalist, and powerful backend framework, **Express.js**. With just a few lines, we have been able to deploy a service on port 3000 that has an entry point at the root of the project, which would be our **http://localhost:3000/**.
+
+Here is the link to my GitHub for this article:
+<GithubLink title="How to create a server in JavaScript with Node.js?" link="https://github.com/alexcanDvlpr/crear-servidor-node-basico" /> 

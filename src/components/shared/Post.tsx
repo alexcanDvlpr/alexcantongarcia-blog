@@ -13,15 +13,17 @@ const Post = ({ source, metadata }: { source: string; metadata: PostMetadata }) 
 	const stats = readingTime(source);
 	return (
 		<Suspense fallback={<LoadingComponent />}>
-			<PostHeader metadata={{...metadata, stats}} />
-			<MDXRemote
-				source={source}
-				components={MDXOwnComponents}
-				onError={ErrorComponent}
-				options={{
-					mdxOptions: { rehypePlugins: [rehypeHighlight] },
-				}}
-			/>
+			<PostHeader metadata={{ ...metadata, stats }} />
+			<div className="w-full h-auto flex flex-col gap-2">
+				<MDXRemote
+					source={source}
+					components={MDXOwnComponents}
+					onError={ErrorComponent}
+					options={{
+						mdxOptions: { rehypePlugins: [rehypeHighlight] },
+					}}
+				/>
+			</div>
 		</Suspense>
 	);
 };

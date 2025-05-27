@@ -1,0 +1,199 @@
+---
+title: 'JavaScript Variable Types in 2022'
+seo_title: '▷ JavaScript Variable Types 2022'
+author: 'Alex Cantón'
+thumbnail: 'https://images.unsplash.com/photo-1678138091332-432d4a1ac407?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+avatar: 'https://res.cloudinary.com/dnnfr3jhi/image/upload/v1639592290/Blog/alex_r0u07u.webp'
+date: '2022-02-01'
+description: 'In JavaScript, as in any language, there are different types of variables. String for text, number for numbers, boolean for true and false values... and many more. Learn all the variable types in JavaScript with Alex Cantón.'
+tags:
+    - 'Desarrollo'
+    - 'JavaScript'
+---
+
+As I may have mentioned in a previous post, **JavaScript** is known as the language of the web, it's a scripting language, which means we don't need a [code compiler](https://es.ryte.com/wiki/Compilador) for our code to work, but rather it runs directly during execution.
+
+It was created in 1995, the same year Java was released, to try to add programs to web pages since at that time, the web as we know it today didn't exist and **HTML** was too simple, to the point that it was limited to grouping tables, text, and some images.
+
+But of course, in these almost 27 years, the language is no longer the same one created to add programs to a poor web. It has evolved a lot (although it had many detractors) and today it is the language par excellence for Frontend and some Backend development. That said, let's see how to get started!
+
+### Evolution of JS
+
+Throughout these 27 years, improvements have been added and the base code has been modified, so that the use of JS adapts to programmers' preferences, the era, and the tools in which it runs today, and for this, developers rely on standards that mark the evolution of JavaScript.
+
+This is **ECMASCRIPT or ES**, in which, since ES5 and ES6, there has been a great change for the better in the language.
+
+### What is a variable in JavaScript?
+
+Variables in JS, and in any language, are a small part of memory where we will store a value, it can be text or a number and many more.
+
+We have three ways to declare variables in JS:
+
+`var`: The reserved word **var** is used to declare global scope variables, which work throughout our JS file. Its use is discouraged since **[ES6](https://www.w3schools.com/js/js_es6.asp)**
+
+```js
+var str = 'Hello World'; // String type
+var num = 25; // Number type
+var trueFalse = true; // Boolean type
+```
+
+`let`: The reserved word **let** is used to declare local or scope-limited variables. Let's see it in an example:
+
+```js
+/**
+ * Being in different scopes, greeting - "Hello There" in global and greeting - 
+ * "General Kenobi" in the if can be called the same because they don't override each other 
+ * and each Output has its value.
+*/
+let isExist = true;
+let greeting = 'Hello There';
+
+if (isExist) {
+    let greeting = 'General Kenobi';
+    console.log(greeting); // Output: General Kenobi
+} // <- We exit the if
+console.log(greeting); // Output: Hello There
+
+```
+
+`const`: The reserved word **const** is used to declare local variables within the Scope and whose value is not mutable, meaning it cannot change its value.
+
+```js
+/**
+ * The const reserved word works the same as let, but its value cannot be changed.
+*/
+const name = 'Alex Cantón'
+name = 'Han Solo'
+
+/**
+ *  The Han Solo line would give the following error: 
+ *  Uncaught TypeError: Assignment to constant variable.
+ */
+
+```
+
+These are the three ways to declare variables in **JavaScript**, now we'll see what types of values exist.
+
+### Variable Types
+
+We've already seen what variables are and how to declare them in JS, but we don't know what types of data they can store. In this section, we'll see the different types that variables can have:
+
+#### Number
+
+The `number` type refers to number-type variables, including integers, negative numbers, and decimals. The **number** type variable is written without quotes, the numerical value as is, for example:
+```js
+const age = 24;
+
+console.log(typeof age) // Output: "number"
+```
+
+#### Strings
+
+**Strings** or Text Strings are another type of variable in JS where we store any type of text we need for our web or application. To use them, we'll need to put the variable value between double quotes (""), single quotes ('') or create a Template String (``).
+
+Template Strings are used to concatenate other variables within the text more quickly and efficiently.
+
+```js
+const name = 'Alex Cantón'
+
+let text1 = "My name is " + name;
+let text2 = 'My name is ' + name;
+let text3 = `My name is ${name}`;
+
+// All three options will return: 'My name is Alex Cantón'
+console.log(typeof text3) // Output: "string"
+```
+
+#### Booleans
+
+**Boolean** type variables are variables that can only have one value between two options, **true** and **false**, closest to binary code, or a 1 or a 0.
+
+The **false** value can occur in the following cases: When the variable has value **0**, **-0**, **null**, **false**, **NaN**, **undefined**, or an **empty string** ('').
+
+```js
+const isExist = true;
+
+if (!isExist) {
+    console.log('The variable is false')
+} else {
+    console.log('The variable is true')
+}
+
+// Output: The variable is true
+console.log(typeof isExist) // Output: "boolean"
+```
+
+#### Arrays
+
+**Arrays** are closest to a list, you can store all types of data in them. Their first index starts at 0 up to N data we have, for example:
+
+```js
+/**
+ * Given the following array, to get 25 in a variable
+ * we'll have to do the following.
+*/
+const arr = [ 'Hello', 25, true, false, 'goodbye']
+
+const greetings = arr[0]
+const age = arr[1]
+console.log(age) // Output: 25
+console.log(greetings) // Output: Hello
+
+console.log(typeof arr) // Output: "object"
+```
+
+We can calculate how many elements we have in an array, thanks to the `.length` method which returns the number of values the array has:
+
+```js
+const arr = [ 'Hello', 25, true, false, 'goodbye']
+
+console.log(arr.length) // Output: 5
+```
+
+#### Undefined
+
+An undefined type variable has a primitive value that is directly assigned to variables when they are declared but not initialized, as can be seen in the example:
+
+```js
+// Declare without initializing
+let name;
+
+console.log(name) // Output: "undefined"
+```
+
+To see the type of the variable we can use `typeof`
+
+```js
+let name;
+
+console.log(typeof name) // Output: "undefined"
+```
+
+#### Object
+
+Objects are the "complex" data structures we use to send information through our application. We typically use them to extrapolate real-world concepts into our code, such as a car.
+
+We'll see this better in this example:
+
+```js
+const car = {
+    brand: 'Ford',
+    model: 'Focus',
+    licensePlate: '0000XXX',
+    color: 'white',
+    passedInspection: true,
+    spareTire: false
+}
+
+console.log(typeof car) // Output "object"
+```
+
+This structure can be nested and as complex as we want. **JavaScript**, being an object-oriented language like other programming languages, is based on these components for coding.
+
+### Conclusion
+
+To start programming in any language, the first thing we must know is how to use variables and all the benefits the language gives us and what types the variables are. For the JavaScript language, we've seen the previous types, then there are others like **Map**, **Set** or **Date** that if you apply a `console.log(typeof XXX)` it will return **object**.
+
+This is because, although there are Strings, Numbers, Boolean etc., almost 90% of what's in JavaScript are objects. In fact, when working with JS in the front, the **DOM** (Browser component tree) are objects, with their functions and properties.
+
+Knowing the types will help us in our JavaScript learning and especially for the migration to **TypeScript** which uses typing. 
