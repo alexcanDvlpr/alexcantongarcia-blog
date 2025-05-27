@@ -8,6 +8,7 @@ export interface PostMetadata {
 	tags: string[];
 	slug: string;
 	thumbnail: string;
+	lang: "en" | "es";
 }
 
 export const sleep = (ms: number): Promise<void> =>

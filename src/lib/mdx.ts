@@ -8,9 +8,9 @@ import { getUserLocale } from "./locale";
 const root = process.cwd();
 const postDir = path.join(root, "src/markdown/posts");
 
-export const getFiles = async () => {
-	const locale = await getUserLocale();
-	return fs.readdirSync(path.join(postDir, locale), "utf-8");
+export const getFiles = async (locale?: "es" | "en") => {
+	const selectedLocale = locale === undefined ? await getUserLocale() : locale;
+	return fs.readdirSync(path.join(postDir, selectedLocale), "utf-8");
 };
 
 export const getPostBySlug = async (slug: string) => {
@@ -24,13 +24,13 @@ export const getPostBySlug = async (slug: string) => {
 	return { content, data };
 };
 
-export const getAllFileMetada = async () => {
-	const files = await getFiles();
-	const locale = await getUserLocale();
+export const getAllFileMetada = async (locale?: "en" | "es") => {
+	const files = await getFiles(locale);
+	const selectedLocale = locale === undefined ? await getUserLocale() : locale;
 
 	return files.reduce((allPost: Array<any>, postSlug: string) => {
 		const mdxSource = fs.readFileSync(
-			path.join(postDir, locale, postSlug),
+			path.join(postDir, selectedLocale, postSlug),
 			"utf-8",
 		);
 

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Blocking
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /server/
+
+# Sitemap
+Sitemap: https://alexcantongarcia.es/sitemap.xml
