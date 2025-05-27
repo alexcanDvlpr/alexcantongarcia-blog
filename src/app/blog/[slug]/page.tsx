@@ -5,7 +5,6 @@ import Post from "@/components/shared/Post";
 import { getFileMetadataBySlug, getPostBySlug } from "@/lib/mdx";
 import { locales } from "@/i18n/request";
 import { PostMetadata } from "@/shared";
-import readingTime from "reading-time";
 
 interface Props {
 	params: Promise<{ slug: string }>;
