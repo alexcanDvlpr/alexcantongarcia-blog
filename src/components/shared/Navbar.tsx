@@ -11,7 +11,6 @@ const Navbar = () => {
 	}
 
 	const element = isMobileView ? <MobileNavbar /> : <NavbarDesktop />;
-
 	return element;
 };
 

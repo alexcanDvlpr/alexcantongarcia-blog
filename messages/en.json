@@ -3,12 +3,10 @@
 		"home": "Home",
 		"about": "About",
 		"blog": "Blog",
-		"greetings": "Hello",
 		"routes": {
 			"home": "/",
 			"about": "/about-me",
-			"blog": "/blog",
-			"greetings": "/asas"
+			"blog": "/blog"
 		}
 	},
 	"HomePage": {

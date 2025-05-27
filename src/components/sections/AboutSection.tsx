@@ -7,9 +7,9 @@ import { Heading } from "../blog/Heading";
 const AboutSection = async () => {
 	const t = await getTranslations("HomePage");
 	return (
-		<section className="w-full min-h-[65vh] sm:min-h-[80vh] lg:min-h-[50vh] bg-white flex flex-col items-center justify-center">
+		<section className="w-full min-h-[65vh] sm:min-h-[80vh] md:min-h-[40vh] lg:min-h-[50vh] bg-white flex flex-col items-center justify-center">
 			<span id="aboutSection"></span>
-			<div className="container mx-auto px-4 py-20 sm:py-28 lg:py-5 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+			<div className="container mx-auto px-4 py-20 sm:py-15 lg:py-5 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
 				<div className="w-full md:w-1/3 flex justify-center md:justify-end">
 					<div className="relative w-52 h-52 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-gray-200 shadow-lg">
 						<Image

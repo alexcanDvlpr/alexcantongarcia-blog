@@ -17,9 +17,17 @@ const AboutHeroSection = async () => {
                     <p className="text-xl mt-2">{t("text1", { years: now.getFullYear() - startingDate.getFullYear() })}</p>
                     <p className="text-xl mt-2">{t("text2")}</p>
                 </div>
-                <div className="w-10/12 lg:w-5/12 relative flex flex-row justify-end">
-                    <Image className="rounded-3xl backdrop-blur-md border border-transparent animated-border pulse-shadow" src={AlexAboutSectionImage} alt="Alex" width={340} height={200} priority />
+                <div className="w-10/12 lg:w-5/12 relative aspect-square lg:aspect-[3/4] flex flex-row justify-end">
+                    <Image
+                        className="rounded-3xl backdrop-blur-md border border-transparent animated-border pulse-shadow object-cover object-top"
+                        src={AlexAboutSectionImage}
+                        alt="Alex"
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 83vw, 41.66vw"
+                    />
                 </div>
+
             </div>
         </div>
     )
