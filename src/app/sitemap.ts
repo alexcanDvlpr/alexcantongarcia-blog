@@ -1,10 +1,9 @@
 import { locales } from "@/i18n/request";
 import { getAllFileMetada } from "@/lib/mdx";
+import { domain } from "@/shared";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const domain = "https://alexcantongarcia.es";
-
 	const blogUrls = await Promise.all(
 		locales.flatMap(async (locale) => {
 			const data = await getAllFileMetada(locale);
