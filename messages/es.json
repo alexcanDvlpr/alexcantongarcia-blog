@@ -54,6 +54,36 @@
 		"text": "Aquí es donde voy a escribir sobre programaciíon, tecnología y desarrollo personal. Simplemente es un rincón donde comentar todo lo que aprendo o sé y creo que puede aportar a la comunidad.",
 		"timeToRead": "{minutes} minutos de lectura"
 	},
+	"Metadata": {
+		"title": "¡Hola, soy Alex!",
+		"description": "Desarrollador web full stack que comparte proyectos, artículos y recursos sobre desarrollo web moderno. Si te interesa mejorar como programador, aprender JavaScript, Next.js o descubrir buenas prácticas, este blog es para ti.",
+		"keyword1": "Desarrollo Web",
+		"keyword2": "Programación",
+		"keyword3": "Tutoriales",
+		"keyword4": "JavaScript",
+		"keyword5": "TypeScript",
+		"keyword6": "Clean Code",
+		"About": {
+			"title": "¡Hola, soy Alex!",
+			"description": "Conoce quién hay detrás del teclado. Soy desarrollador web full stack con experiencia en JavaScript, React y Next.js. En esta página te cuento mi historia, cómo empecé en el desarrollo y qué me motiva a seguir creando en el mundo tech.",
+			"keyword1": "Desarrollo Web",
+			"keyword2": "Programación",
+			"keyword3": "Tutoriales",
+			"keyword4": "JavaScript",
+			"keyword5": "TypeScript",
+			"keyword6": "Clean Code"
+		},
+		"Blog": {
+			"title": "Blog",
+			"description": "Artículos sobre desarrollo web moderno, JavaScript, React, Next.js y mucho más. Aquí comparto lo que aprendo, buenas prácticas, tutoriales y recursos útiles para mejorar como desarrollador.",
+			"keyword1": "Desarrollo Web",
+			"keyword2": "Programación",
+			"keyword3": "Tutoriales",
+			"keyword4": "JavaScript",
+			"keyword5": "TypeScript",
+			"keyword6": "Clean Code"
+		}
+	},
 	"es": "Español",
 	"en": "Inglés"
 }

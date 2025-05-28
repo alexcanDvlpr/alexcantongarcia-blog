@@ -1,23 +1,52 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
-import { getLocale } from "next-intl/server";
+import { Instrument_Sans, Montserrat, PT_Sans } from "next/font/google";
+import { getLocale, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import "./globals.css";
 import "prism-themes/themes/prism-darcula.css";
 import "highlight.js/styles/vs2015.min.css";
 import Navbar from "@/components/shared/Navbar";
+import { domain } from "@/shared";
 
-const instrument_Sans = Instrument_Sans({
-	variable: "--font-instrument-sans",
+
+const montserrat = Montserrat({
+	variable: "--font-montserrat",
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
+	weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-	title: "Alex Cantón | Desarrollo web con TypeScript",
-	description:
-		"Mi nombre es Alex Cantón y soy desarrollador web desde el 2017 en Madrid, España. Esta es mi web junto con mi blog en la que quiero compartir conocimiento, enseñar nuevas tecnologías y enseñar JavaScript desde 0 para gente que este estudiando o se este abriendo camino en el mundo laboral.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations("Metadata");
+	return {
+		title: `${t("title")} | Alex Cantón García`,
+		description: t("description"),
+		keywords: [t("keyword1"), t("keyword2"), t("keyword3"), t("keyword4"), t("keyword5"), t("keyword6")],
+
+		alternates: {
+			canonical: domain,
+			languages: {
+				"es": domain,
+				"en": domain,
+			},
+		},
+
+		twitter: {
+			card: "summary_large_image",
+			title: t("title"),
+			description: t("description"),
+			site: "Alex Cantón garcía",
+			creator: "@alexcanDvlpr",
+		},
+
+		robots: {
+			index: true,
+			follow: true,
+			nocache: false,
+		},
+
+		metadataBase: new URL(domain),
+	};
+}
 
 export default async function RootLayout({
 	children,
@@ -27,7 +56,7 @@ export default async function RootLayout({
 	const locale = await getLocale();
 	return (
 		<html className="scroll-smooth" lang={locale}>
-			<body>
+			<body className={montserrat.className}>
 				<NextIntlClientProvider>
 					<Navbar />
 					{children}
