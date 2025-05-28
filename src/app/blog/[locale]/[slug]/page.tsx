@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import Post from "@/components/shared/Post";
 import { getFileMetadataBySlug, getPostBySlug } from "@/lib/mdx";
 import { locales } from "@/i18n/request";
-import { PostMetadata } from "@/shared";
+import { domain, PostMetadata } from "@/shared";
 import { getPostSchemaData } from "@/shared/metadata/schemas/blog-schema";
 
 interface Props {
-	params: Promise<{ slug: string }>;
+	params: Promise<{ slug: string; locale: string; }>;
 }
 
 export default async function Page({ params }: Props) {
@@ -42,17 +42,41 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	const { slug } = await params;
+	const { slug, locale } = await params;
 
-	const metadata = await getFileMetadataBySlug(slug);
+	const metadata = await getFileMetadataBySlug(slug, locale);
 
 	return {
-		title: metadata.title,
+		title: `▷ ${metadata.title} | Alex Cantón García`,
 		description: metadata.description,
+
+		alternates: {
+			canonical: `${domain}/blog/${locale}/${metadata.slug}`,
+			languages: {
+				"es": `${domain}/blog/${locale}/${metadata.slug}`,
+				"en": `${domain}/blog/${locale}/${metadata.slug}`,
+			},
+		},
 		authors: [{ name: metadata.author }],
 		creator: metadata.author,
 		category: metadata.tags.join(", "),
 		publisher: metadata.author,
+
+		twitter: {
+			card: "summary_large_image",
+			title: `▷ ${metadata.title} | Alex Cantón García`,
+			description: metadata.description,
+			site: "Alex Cantón garcía",
+			creator: "@alexcanDvlpr",
+		},
+
+		robots: {
+			index: true,
+			follow: true,
+			nocache: false,
+		},
+
+		metadataBase: new URL(`${domain}/blog/${locale}/${metadata.slug}`),
 	};
 }
 

@@ -47,10 +47,14 @@ export const getAllFileSortedByDate = async () => {
 
 export const getFileMetadataBySlug = async (
 	slug: string,
+	locale?: string
 ): Promise<PostMetadata> => {
-	const locale = await getUserLocale();
+	const selectedLocale = locale === undefined
+		? await getUserLocale()
+		: locale;
+
 	const mdxSource = fs.readFileSync(
-		path.join(postDir, locale, `${slug}.mdx`),
+		path.join(postDir, selectedLocale, `${slug}.mdx`),
 		"utf-8",
 	);
 
