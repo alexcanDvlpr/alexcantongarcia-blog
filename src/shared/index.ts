@@ -1,3 +1,5 @@
+export const domain = "https://alexcantongarcia.es";
+
 export interface PostMetadata {
 	title: string;
 	seo_title: string;

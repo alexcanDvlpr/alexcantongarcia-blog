@@ -5,6 +5,7 @@ import Post from "@/components/shared/Post";
 import { getFileMetadataBySlug, getPostBySlug } from "@/lib/mdx";
 import { locales } from "@/i18n/request";
 import { PostMetadata } from "@/shared";
+import { getPostSchemaData } from "@/shared/metadata/schemas/blog-schema";
 
 interface Props {
 	params: Promise<{ slug: string }>;
@@ -14,9 +15,15 @@ export default async function Page({ params }: Props) {
 	const { slug } = await params;
 	const { content: post, data: metadata } = await getPostBySlug(slug);
 	return (
-		<div className="max-w-4xl mx-auto min-h-screen px-4 md:px-7 lg:px-0">
-			<Post source={post} metadata={metadata as PostMetadata} />
-		</div>
+		<>
+			<div className="max-w-4xl mx-auto min-h-screen px-4 md:px-7 lg:px-0">
+				<Post source={post} metadata={metadata as PostMetadata} />
+			</div>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(getPostSchemaData(metadata as PostMetadata)) }}
+			/>
+		</>
 	)
 }
 
