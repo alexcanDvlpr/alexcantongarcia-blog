@@ -3,6 +3,7 @@ import { DockerIcon, GoIcon, JavaIcon, JavaScriptIcon, MongoBDIcon, MySQLIcon, N
 import { ReactNode } from "react";
 import { Heading } from "../blog/Heading";
 import { getTranslations } from "next-intl/server";
+import ContainerBackground from "../shared/ContainerBackground";
 
 type Skill = {
     id: string;
@@ -43,14 +44,14 @@ const SkillsSection = async () => {
     ];
 
     return (
-        <div className="w-full bg-[#011627] text-gray-200 flex flex-col items-center py-10 px-4">
+        <ContainerBackground className="w-full bg-[#011627] text-gray-200 flex flex-col items-center py-10 px-4">
             <Heading level={2}>{t("title")}</Heading>
             <div className="w-full max-w-screen-md mt-6 space-y-10">
                 <SkillGroup title={t("languages")} skills={languages} />
                 <SkillGroup title={t("databases")} skills={databases} />
                 <SkillGroup title={t("tools")} skills={tools} />
             </div>
-        </div>
+        </ContainerBackground>
     );
 };
 

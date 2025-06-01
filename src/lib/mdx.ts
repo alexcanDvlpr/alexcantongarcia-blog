@@ -62,3 +62,8 @@ export const getFileMetadataBySlug = async (
 
 	return { ...data, slug: slug.replace(".mdx", "") } as PostMetadata;
 };
+
+export const getLastThreePosts = async () => {
+	const filesSortedByDate = await getAllFileSortedByDate();
+	return filesSortedByDate.slice(0, 3);
+}

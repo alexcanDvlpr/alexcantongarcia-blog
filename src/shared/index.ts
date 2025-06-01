@@ -1,3 +1,5 @@
+import { Locale } from "@/i18n/request";
+
 export const domain = "https://alexcantongarcia.es";
 
 export interface PostMetadata {
@@ -15,3 +17,6 @@ export interface PostMetadata {
 
 export const sleep = (ms: number): Promise<void> =>
 	new Promise((resolve) => setTimeout(resolve, ms));
+
+export const createPostLink = (locale: string, slug: string) => 
+	`/blog/${locale}/${slug}`;

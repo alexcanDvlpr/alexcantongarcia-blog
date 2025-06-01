@@ -7,6 +7,7 @@ import "prism-themes/themes/prism-darcula.css";
 import "highlight.js/styles/vs2015.min.css";
 import Navbar from "@/components/shared/Navbar";
 import { domain } from "@/shared";
+import Footer from "@/components/shared/Footer";
 
 
 const montserrat = Montserrat({
@@ -60,6 +61,7 @@ export default async function RootLayout({
 				<NextIntlClientProvider>
 					<Navbar />
 					{children}
+					<Footer />
 				</NextIntlClientProvider>
 			</body>
 		</html>
