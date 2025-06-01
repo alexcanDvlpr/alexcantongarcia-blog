@@ -19,7 +19,7 @@ const Footer = async () => {
                     <p className="text-lg mb-2">&copy; {new Date().getFullYear()} Alex Cantón García</p>
                     <p className="text-lg mb-4">{t("rights")}</p>
                     <div className="flex gap-4">
-                        <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">LinkedIn</a>
+                        <Link href="https://www.linkedin.com/in/alejandro-cant%C3%B3n-garc%C3%ADa/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">LinkedIn</Link>
                     </div>
                 </div>
 
