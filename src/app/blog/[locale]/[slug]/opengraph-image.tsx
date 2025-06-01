@@ -26,7 +26,7 @@ export default async function Image({ params }: { params: { slug: string; locale
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    zIndex: 0
+                    zIndex: "0"
                 }}
             />
 
@@ -37,12 +37,11 @@ export default async function Image({ params }: { params: { slug: string; locale
                 width: "100%",
                 height: "100%",
                 backgroundColor: "rgba(0, 0, 0, 0.6)",
-                zIndex: 1
+                zIndex: "1"
             }}></div>
 
             <div style={{
                 position: "relative",
-                zIndex: 2,
                 color: "white",
                 width: "100%",
                 height: "100%",
