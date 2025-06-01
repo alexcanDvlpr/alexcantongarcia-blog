@@ -84,6 +84,19 @@
 			"keyword6": "Clean Code"
 		}
 	},
+	"Footer": {
+		"contact": "Contacto",
+		"lastPosts": "Últimos artículos",
+		"about": {
+			"title": "Sobre mí",
+			"text": "Soy Alex y vivo en Madrid, España 🇪🇸. Trabajo como desarrollador web en una startup, usando TypeScript, Next.js, Auth0, MongoDB y Python."
+		},
+		"rights": "Todos los derechos reservados.",
+		"link": {
+			"privacy": "Políticas de Privacidad",
+			"cookies": "Política de cookies"
+		}
+	},
 	"es": "Español",
 	"en": "Inglés"
 }
