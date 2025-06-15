@@ -1,4 +1,5 @@
 import ContainerBackground from "@/components/shared/ContainerBackground";
+import TransitionWrapper from "@/components/Transitions/TransitionWrapper";
 import { domain } from "@/shared";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -39,12 +40,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function BlogMdxLayout({ children }: { children: ReactNode }) {
 	return (
-		<ContainerBackground>
-			{/* Grid Background */}
-			<div className="absolute inset-0 opacity-65">
-				<div className="h-full w-full bg-grid-pattern bg-[length:40px_40px]"></div>
-			</div>
-			<div className="w-full z-20">{children}</div>
-		</ContainerBackground>
+		<TransitionWrapper>
+			<ContainerBackground>
+				{/* Grid Background */}
+				<div className="absolute inset-0 opacity-65">
+					<div className="h-full w-full bg-grid-pattern bg-[length:40px_40px]"></div>
+				</div>
+				<div className="w-full z-20">{children}</div>
+			</ContainerBackground>
+		</TransitionWrapper>
 	);
 }

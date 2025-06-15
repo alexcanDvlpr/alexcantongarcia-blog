@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 import AboutMePage from "@/components/pages/AboutMePage";
 import { getUserLocale } from "@/lib/locale";
-import { domain } from "@/shared";
+import { domain, sleep } from "@/shared";
 import { getAboutSchemaData } from "@/shared/metadata/schemas/about-schema";
 
 export async function generateMetadata(): Promise<Metadata> {
