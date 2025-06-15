@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getUserLocale } from "@/lib/locale";
 import { createPostLink } from "@/shared";
 import { getTranslations } from "next-intl/server";
+import { Locale } from "@/i18n/request";
 
 const Footer = async () => {
 	const posts = await getLastThreePosts();
@@ -21,11 +22,11 @@ const Footer = async () => {
 		};
 
 		if (type === "cookies") {
-			return cookiesUrls[locale];
-		}
-
-		if (type === "privacy") {
-			return privacyUrls[locale];
+			return cookiesUrls[locale as keyof typeof cookiesUrls];
+		} else if (type === "privacy") {
+			return privacyUrls[locale as keyof typeof cookiesUrls];
+		} else {
+			return type === "cookies" ? "/politicas-de-cookies" : "/politicas-de-privacidad"
 		}
 	};
 
@@ -77,10 +78,10 @@ const Footer = async () => {
 
 			{/* Sección Legal */}
 			<div className="border-t border-gray-700 mt-8 pt-6 text-lg text-gray-400 text-center space-x-10">
-				<Link href="/cookies" className="hover:text-white transition">
+				<Link href={getPolicyUrlByLocale("cookies")} className="hover:text-white transition">
 					{t("link.cookies")}
 				</Link>
-				<Link href="/privacidad" className="hover:text-white transition">
+				<Link href={getPolicyUrlByLocale("privacy")} className="hover:text-white transition">
 					{t("link.privacy")}
 				</Link>
 			</div>
