@@ -2,7 +2,7 @@
 import { setUserLocale } from "@/lib/locale";
 import { startTransition, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { redirect, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { sleep } from "@/shared";
 import type { Locale } from "@/i18n/request";
 
@@ -40,9 +40,12 @@ const LangSwitcher = ({ isMobile }: { isMobile?: boolean }) => {
 
 		startTransition(async () => {
 			setUserLocale(locale);
+			const router = useRouter();
 			if (pathname.includes("/blog/") && pathname.split("blog/").length > 1) {
 				await sleep(250);
-				redirect("/blog");
+				router.push("/blog");
+			} else {
+				router.refresh();
 			}
 		});
 	}

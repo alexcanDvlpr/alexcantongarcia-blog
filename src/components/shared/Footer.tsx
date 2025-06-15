@@ -5,14 +5,12 @@ import { getUserLocale } from "@/lib/locale";
 import { createPostLink } from "@/shared";
 import { getTranslations } from "next-intl/server";
 
-type Locale = "es" | "en";
-
 const Footer = async () => {
 	const posts = await getLastThreePosts();
-	const locale = (await getUserLocale()) as Locale;
+	const locale = await getUserLocale();
 	const t = await getTranslations("Footer");
 
-	const getPolicyUrlByLocale = (type: "cookies" | "privacy"): string => {
+	const getPolicyUrlByLocale = (type: "cookies" | "privacy") => {
 		const cookiesUrls: Record<Locale, string> = {
 			es: "/politicas-de-cookies",
 			en: "/cookies-policies",
@@ -24,7 +22,9 @@ const Footer = async () => {
 
 		if (type === "cookies") {
 			return cookiesUrls[locale];
-		} else {
+		}
+
+		if (type === "privacy") {
 			return privacyUrls[locale];
 		}
 	};
@@ -55,8 +55,8 @@ const Footer = async () => {
 				<div>
 					<h3 className="text-xl font-semibold mb-4">{t("lastPosts")}</h3>
 					<ul className="space-y-2">
-						{posts.map((post) => (
-							<li key={post.slug}>
+						{posts.map((post, index) => (
+							<li key={index}>
 								<Link
 									href={createPostLink(locale, post.slug)}
 									className="text-lg hover:underline hover:text-white transition"
@@ -77,10 +77,10 @@ const Footer = async () => {
 
 			{/* Sección Legal */}
 			<div className="border-t border-gray-700 mt-8 pt-6 text-lg text-gray-400 text-center space-x-10">
-				<Link href={getPolicyUrlByLocale("cookies")} className="hover:text-white transition">
+				<Link href="/cookies" className="hover:text-white transition">
 					{t("link.cookies")}
 				</Link>
-				<Link href={getPolicyUrlByLocale("privacy")} className="hover:text-white transition">
+				<Link href="/privacidad" className="hover:text-white transition">
 					{t("link.privacy")}
 				</Link>
 			</div>
