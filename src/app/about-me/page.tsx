@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 import AboutMePage from "@/components/pages/AboutMePage";
 import { getUserLocale } from "@/lib/locale";
-import { domain } from "@/shared";
+import { domain, sleep } from "@/shared";
 import { getAboutSchemaData } from "@/shared/metadata/schemas/about-schema";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -40,18 +40,17 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const AboutMePageEn = async () => {
-    const locale = await getUserLocale();
-    if (locale === "es") {
-        redirect('/quien-soy')
-    }
+	const locale = await getUserLocale();
 
-    return <>
-        <AboutMePage />
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(getAboutSchemaData(locale)) }}
-        />
-    </>
+	return (
+		<div className="w-full min-h-screen py-24 lg:py-30 flex flex-col justify-start items-center bg-gray-900 text-white relative">
+			<AboutMePage />
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(getAboutSchemaData(locale)) }}
+			/>
+		</div>
+	)
 }
 
 export default AboutMePageEn;

@@ -4,15 +4,14 @@ import Link from "next/link";
 import { getUserLocale } from "@/lib/locale";
 import { createPostLink } from "@/shared";
 import { getTranslations } from "next-intl/server";
-
-type Locale = "es" | "en";
+import { Locale } from "@/i18n/request";
 
 const Footer = async () => {
 	const posts = await getLastThreePosts();
-	const locale = (await getUserLocale()) as Locale;
+	const locale = await getUserLocale();
 	const t = await getTranslations("Footer");
 
-	const getPolicyUrlByLocale = (type: "cookies" | "privacy"): string => {
+	const getPolicyUrlByLocale = (type: "cookies" | "privacy") => {
 		const cookiesUrls: Record<Locale, string> = {
 			es: "/politicas-de-cookies",
 			en: "/cookies-policies",
@@ -23,9 +22,11 @@ const Footer = async () => {
 		};
 
 		if (type === "cookies") {
-			return cookiesUrls[locale];
+			return cookiesUrls[locale as keyof typeof cookiesUrls];
+		} else if (type === "privacy") {
+			return privacyUrls[locale as keyof typeof cookiesUrls];
 		} else {
-			return privacyUrls[locale];
+			return type === "cookies" ? "/politicas-de-cookies" : "/politicas-de-privacidad"
 		}
 	};
 
@@ -55,8 +56,8 @@ const Footer = async () => {
 				<div>
 					<h3 className="text-xl font-semibold mb-4">{t("lastPosts")}</h3>
 					<ul className="space-y-2">
-						{posts.map((post) => (
-							<li key={post.slug}>
+						{posts.map((post, index) => (
+							<li key={index}>
 								<Link
 									href={createPostLink(locale, post.slug)}
 									className="text-lg hover:underline hover:text-white transition"

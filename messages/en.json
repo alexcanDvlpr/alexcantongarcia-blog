@@ -46,8 +46,13 @@
 		},
 		"AboutHero": {
 			"text1": "I'm a Full Stack Developer with a focus on Backend, with over {years} years of experience. Specialized in technical solutions using TypeScript, but open to any technology and architecture.",
-			"text2": "Throughout my career, I've worked with JavaScript, TypeScript, and Node.js using Express.js and Next.js, as well as various technologies like Docker and Docker Compose, AWS, CI/CD..."
-		}
+			"text2": "Throughout my career, I've worked with JavaScript, TypeScript, and Node.js using Express.js and Next.js, as well as various technologies like Docker and Docker Compose, AWS, CI/CD...",
+			"contact": "Contact me",
+			"blog": "Go to blog",
+			"developer": "Software Developer"
+		},
+		"programming": "Programming...",
+		"latestsPosts": "Latest Posts"
 	},
 	"BlogPage": {
 		"title": "Blog Page",
