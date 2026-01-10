@@ -6,6 +6,7 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 Disallow: /server/
+Disallow: /auto-ideas
 
 # Sitemap
 Sitemap: https://alexcantongarcia.es/sitemap.xml

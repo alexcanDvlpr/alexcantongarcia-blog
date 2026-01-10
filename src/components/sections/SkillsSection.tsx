@@ -1,4 +1,4 @@
-import { Armchair, Clock8 } from "lucide-react";
+import { Clock8 } from "lucide-react";
 import { DockerIcon, GoIcon, JavaIcon, JavaScriptIcon, MongoBDIcon, MySQLIcon, NextIcon, NodeIcon, PostgreSQLIcon, PythonIcon, ReactIcon, TypeScriptIcon, VueIcon } from "../../../public/images/icons";
 import { ReactNode } from "react";
 import { Heading } from "../blog/Heading";
@@ -45,11 +45,13 @@ const SkillsSection = async () => {
 
     return (
         <ContainerBackground className="w-full bg-[#011627] text-gray-200 flex flex-col items-center py-10 px-4">
-            <Heading level={2}>{t("title")}</Heading>
-            <div className="w-full max-w-screen-md mt-6 space-y-10">
-                <SkillGroup title={t("languages")} skills={languages} />
-                <SkillGroup title={t("databases")} skills={databases} />
-                <SkillGroup title={t("tools")} skills={tools} />
+            <div className="z-50">
+                <Heading level={2}>{t("title")}</Heading>
+                <div className="w-full max-w-screen-md mt-6 space-y-10">
+                    <SkillGroup title={t("languages")} skills={languages} />
+                    <SkillGroup title={t("databases")} skills={databases} />
+                    <SkillGroup title={t("tools")} skills={tools} />
+                </div>
             </div>
         </ContainerBackground>
     );
